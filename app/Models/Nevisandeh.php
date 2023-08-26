@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Nevisandeh extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'bio'];
+    protected $fillable = ['name', 'bio','image'];
 }

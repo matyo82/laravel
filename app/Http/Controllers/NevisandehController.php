@@ -27,9 +27,9 @@ class NevisandehController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreNevisandehRequest $request)
+    public function store(\Illuminate\Http\Request $request)
     {
-        dd('yoooooooo');
+        return($request);
     }
 
     /**

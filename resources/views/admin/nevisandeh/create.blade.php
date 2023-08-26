@@ -37,8 +37,8 @@
                                             </div>
                                             <div class="form-group mb-4 mt-3">
                                                 <label for="exampleFormControlFile1">Example file input</label>
-{{--                                                <input name="image" type="file" class="form-control-file"--}}
-{{--                                                       id="exampleFormControlFile1">--}}
+                                                <input name="image" type="file" class="form-control-file"
+                                                       id="exampleFormControlFile1">
                                             </div>
                                             <div class="form-group">
                                                 <input type="submit" class="mt-4 btn btn-primary">
