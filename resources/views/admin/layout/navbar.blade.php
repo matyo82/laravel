@@ -30,7 +30,7 @@
                     <polyline points="6 9 12 15 18 9"></polyline>
                 </svg>
             </a>
-        </li>
+        </li>   
 
         <li class="menu single-menu">
             <a href="{{ route('categorie.index') }}" aria-expanded="false" class="dropdown-toggle">
@@ -63,6 +63,32 @@
                 </li>
                 <li>
                     <a href="{{ route('categorie.create') }}"> افزودن دسته بندی‌ها </a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="menu single-menu">
+            <a href="#" aria-expanded="false" class="dropdown-toggle">
+                <div class="">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                     class="feather feather-chevron-down">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+                    <span>کاربران</span>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                     class="feather feather-chevron-down">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </a>
+            <ul class="collapse submenu list-unstyled" id="app" data-parent="#topAccordion">
+                <li>
+                    <a href="{{ route('admin.index') }}"> ادمین</a>
+                </li>
+                <li>
+                    <a href="{{ route('categorie.create') }}"> عادی </a>
                 </li>
             </ul>
         </li>

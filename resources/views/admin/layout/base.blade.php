@@ -50,7 +50,7 @@
         </a>
 
         <div class="nav-logo align-self-center">
-            <a class="navbar-brand" href="/index.html"><img alt="logo" src="assets/img/90x90.jpg"> <span
+            <a class="navbar-brand" href="/index.html"><img alt="logo" src="{{asset('assets/img/90x90.jpg')}}"> <span
                     class="navbar-brand-name">CORK</span></a>
         </div>
 
@@ -223,7 +223,7 @@
                 <a href="javascript:void(0);" class="nav-link dropdown-toggle user" id="user-profile-dropdown"
                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div class="media">
-                        <img src="assets/img/90x90.jpg" class="img-fluid" alt="admin-profile">
+                        <img src="{{asset('assets/img/90x90.jpg')}}" class="img-fluid" alt="admin-profile">
                         <div class="media-body align-self-center">
                             <h6><span>Hi,</span> Alan</h6>
                         </div>
