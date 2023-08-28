@@ -30,7 +30,7 @@
                         @csrf
                         <div class="form">
                             {{--       user name                    --}}
-                            <div id="username-field" class="field-wrapper input">
+                            {{--<div id="username-field" class="field-wrapper input">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                      fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                      stroke-linejoin="round" class="feather feather-user">
@@ -39,7 +39,7 @@
                                 </svg>
                                 <input id="username" name="username" type="text" class="form-control"
                                        placeholder="Username">
-                            </div>
+                            </div>--}}
                             {{--        name             --}}
                             <div id="username-field" class="field-wrapper input">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -71,7 +71,7 @@
                                 @enderror
                             </div>
                             {{--          phone number                              --}}
-                            <div id="phone-field" class="field-wrapper input">
+                            {{--<div id="phone-field" class="field-wrapper input">
 
                                 <input id="phone" name="phone" type="text" placeholder="phoen">
                                 @error('phone')
@@ -79,7 +79,7 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
+                            </div>--}}
                             {{--       password                     --}}
                             <div id="password-field" class="field-wrapper input mb-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"

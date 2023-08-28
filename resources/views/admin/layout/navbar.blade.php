@@ -85,7 +85,7 @@
             </a>
             <ul class="collapse submenu list-unstyled" id="app" data-parent="#topAccordion">
                 <li>
-                    <a href="{{ route('admin.index') }}"> ادمین</a>
+                    <a href="{{ route('admin-index') }}"> ادمین</a>
                 </li>
                 <li>
                     <a href="{{ route('categorie.create') }}"> عادی </a>
