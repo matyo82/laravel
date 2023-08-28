@@ -6,8 +6,12 @@ use App\Http\Requests\StoreCategorieRequest;
 use App\Http\Requests\UpdateCategorieRequest;
 use App\Models\Categorie;
 use GuzzleHttp\Psr7\Request;
+<<<<<<< HEAD:app/Http/Controllers/Admin/CategorieController.php
 use App\Http\Controllers\Controller;
 
+=======
+use Illuminate\Auth\Events\Validated;
+>>>>>>> ed498ee46684603cf1b69529b51a644adc568127:app/Http/Controllers/CategorieController.php
 
 class CategorieController extends Controller
 {
@@ -34,8 +38,8 @@ class CategorieController extends Controller
     public function store(\Illuminate\Http\Request $request)
     {
         $request->validate([
-            'kay'=>'required',
-            'name'=>'required|max:50'
+            'kay' => 'required',
+            'name' => 'required|max:50'
         ]);
         Categorie::create([
             'kay' => $request->kay,
@@ -43,14 +47,6 @@ class CategorieController extends Controller
         ]);
         return redirect()->back();
 
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Categorie $categorie)
-    {
-        //
     }
 
     /**
@@ -64,9 +60,10 @@ class CategorieController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateCategorieRequest $request, Categorie $categorie)
+    public function update(\Illuminate\Http\Request $request, Categorie $categorie)
     {
-        //
+        $categorie->update($request->all());
+        return redirect('admin/categorie');
     }
 
     /**
