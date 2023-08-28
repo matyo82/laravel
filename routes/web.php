@@ -21,9 +21,7 @@ Route::prefix('/admin')->group(function () {
     Route::get('/', function () {
         return view('admin.index');
     })->name('admin-index');
-	
-	
-    Route::resource('/users/admin', \App\Http\Controllers\AdminUserController::class);
+
     Route::resource('/categorie', \App\Http\Controllers\CategorieController::class);
     Route::resource('/nevisandeh', \App\Http\Controllers\NevisandehController::class);
 
@@ -31,3 +29,6 @@ Route::prefix('/admin')->group(function () {
         // Uses first & second middleware...
     });
 });
+
+Auth::routes();
+

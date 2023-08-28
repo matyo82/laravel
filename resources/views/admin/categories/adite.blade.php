@@ -21,7 +21,9 @@
 
                                 <div class="row">
                                     <div class="col-lg-6 col-12 mx-auto">
-                                        <form method="post">
+                                        <form method="post" action="{{ route('categorie.destroy', $categorie->id) }}">
+                                            @csrf
+                                            @method('PUT')
                                             <div class="form-group">
                                                 <p>نوع دستبه بندی:</p>
                                                 <label>
