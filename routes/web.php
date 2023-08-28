@@ -20,15 +20,15 @@ Route::get('/', function () {
 Route::prefix('/admin')->group(function () {
     Route::get('/', function () {
         return view('admin.index');
-    })->name('admin-index')->middleware('auth');
+    })->name('admin-index')->middleware('admin');
 
-    Route::resource('/categorie', \App\Http\Controllers\CategorieController::class)->middleware('auth');
-    Route::resource('/nevisandeh', \App\Http\Controllers\NevisandehController::class)->middleware('auth');
-    Route::resource('/product', \App\Http\Controllers\ProductController::class)->middleware('auth');
+    Route::resource('/categorie', \App\Http\Controllers\CategorieController::class)->middleware('admin');
+    Route::resource('/nevisandeh', \App\Http\Controllers\NevisandehController::class)->middleware('admin');
+    Route::resource('/product', \App\Http\Controllers\ProductController::class)->middleware('admin');
 
     Route::get('/user/profile', function () {
         // Uses first & second middleware...
-    })->middleware('auth');
+    })->middleware('admin');
 });
 
 Auth::routes();
