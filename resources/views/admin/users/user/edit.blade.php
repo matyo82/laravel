@@ -21,14 +21,14 @@
 
                                 <div class="row">
                                     <div class="col-lg-6 col-12 mx-auto">
-                                        <form method="post" action="{{route('admins.update',$admin)}}">
+                                        <form method="post" action="{{route('users.update',$user)}}">
 										@csrf
 										@method('put')
                                             <div class="form-group">
                                                 <p>نام:</p>
                                                 <label for="t-text" class="sr-only">نام</label>
                                                 <input id="t-text" type="text" name="name" placeholder="Some Text..."
-                                                       class="form-control" value="{{old('name',$admin->name)}}"   required>
+                                                       class="form-control" value="{{old('name',$user->name)}}"   required>
 												@error('name')
                                                  <span class="alert_required bg-danger text-white p-1 rounded" role="alert">
                                                    <strong>
@@ -41,7 +41,7 @@
                                             <div class="form-group">
                                                 <label for="exampleFormControlTextarea1">ایمیل:</label>
                                                 <input id="t-text" type="text" name="email" placeholder="Some Text..."
-                                                       class="form-control" value="{{old('email',$admin->email)}}"  disabled required>
+                                                       class="form-control" value="{{old('email',$user->email)}}"  disabled required>
 												@error('email')
                                                  <span class="alert_required bg-danger text-white p-1 rounded" role="alert">
                                                    <strong>
@@ -54,8 +54,8 @@
 											<div class="form-group">
                                                 <label for="exampleFormControlTextarea1">نقش:</label>
                                                 <select class="form-control" name="user_type">
-												 <option value="1" @if(old('user_type', $admin->user_type) == 1) selected @endif>ادمین</option>
-												 <option value="0" @if(old('user_type', $admin->user_type) == 0) selected @endif> کاربر معمولی</option>
+												 <option value="1" @if(old('user_type', $user->user_type) == 1) selected @endif>ادمین</option>
+												 <option value="0" @if(old('user_type', $user->user_type) == 0) selected @endif> کاربر معمولی</option>
 												</select>
 												
 												@error('user_type')
@@ -70,8 +70,8 @@
 											<div class="form-group">
                                                 <label for="exampleFormControlTextarea1">وضعیت:</label>
                                                 <select class="form-control" name="status">
-												 <option value="1" @if(old('status', $admin->status) == 1) selected @endif>فعال</option>
-												 <option value="0" @if(old('status', $admin->status) == 0) selected @endif>غیر فعال</option>
+												 <option value="1" @if(old('status', $user->status) == 1) selected @endif>فعال</option>
+												 <option value="0" @if(old('status', $user->status) == 0) selected @endif>غیر فعال</option>
 												</select>
 												
 												@error('user_type')

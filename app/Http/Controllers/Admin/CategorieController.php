@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\StoreCategorieRequest;
 use App\Http\Requests\UpdateCategorieRequest;
 use App\Models\Categorie;
 use GuzzleHttp\Psr7\Request;
+use App\Http\Controllers\Controller;
+
 
 class CategorieController extends Controller
 {

@@ -1,21 +1,22 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-use App\Http\Requests\AdminUserRequest;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\UserRequest;
 
 
-class AdminUserController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-		$admins=User::orderBy('created_at','desc')->where('user_type',1)->get();
-        return view('admin.users.admin.index',compact('admins'));
+		$users=User::orderBy('created_at','desc')->where('user_type',0)->get();
+        return view('admin.users.user.index',compact('users'));
     }
 
     /**
@@ -45,19 +46,19 @@ class AdminUserController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(User $admin)
+    public function edit(User $user)
     {
-		return view('admin.users.admin.edit',compact('admin'));
+		return view('admin.users.user.edit',compact('user'));
 	}
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(AdminUserRequest $request, User $admin)
+    public function update(UserRequest $request, User $user)
     {
         $inputs = $request->all();
-		$admin->update($inputs);
-        return to_route('admin.index');
+		$user->update($inputs);
+        return to_route('users.index');
     }
 
     /**

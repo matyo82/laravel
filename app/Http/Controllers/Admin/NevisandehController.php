@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\StoreNevisandehRequest;
 use App\Http\Requests\UpdateNevisandehRequest;
 use App\Models\Nevisandeh;
+use App\Http\Controllers\Controller;
+
 
 class NevisandehController extends Controller
 {

@@ -21,12 +21,10 @@ Route::prefix('/admin')->group(function () {
     Route::get('/', function () {
         return view('admin.index');
     })->name('admin-index');
-	
-	
-    Route::resource('/users/admin', \App\Http\Controllers\AdminUserController::class);
-    Route::resource('/categorie', \App\Http\Controllers\CategorieController::class);
-    Route::resource('/nevisandeh', \App\Http\Controllers\NevisandehController::class);
-
+    Route::resource('/users', \App\Http\Controllers\Admin\UserController::class);
+    Route::resource('/admins', \App\Http\Controllers\Admin\AdminUserController::class);
+    Route::resource('/categorie', \App\Http\Controllers\Admin\CategorieController::class);
+    Route::resource('/nevisandeh', \App\Http\Controllers\Admin\NevisandehController::class);
     Route::get('/user/profile', function () {
         // Uses first & second middleware...
     });

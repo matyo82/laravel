@@ -13,7 +13,7 @@
                                 <div class="widget-header">
                                     <div class="row">
                                         <div class="col-xl-12 col-md-12 col-sm-12 col-12">
-                                            <h4>کاربران ادمین </h4>
+                                            <h4>کاربران  </h4>
                                         </div>
                                     </div>
                                 </div>
@@ -30,7 +30,7 @@
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            @foreach($admins as $admin)
+                                            @foreach($users as $user)
 											<tr>
                                                 <td>
                                                     <div class="d-flex">
@@ -38,15 +38,16 @@
                                                             <img alt="avatar" class="img-fluid rounded-circle"
                                                                  src="{{asset('assets/img/90x90.jpg')}}">
                                                         </div>
-                                                        <p class="align-self-center mb-0">{{$admin->name}}</p>
+                                                        <p class="align-self-center mb-0">{{$user->name}}</p>
                                                     </div>
                                                 </td>
-                                                <td>{{$admin->email}}</td>
-                                                <td>{{$admin->user_type==0 ? 'user' : 'admin'}}</td>
-                                                <td>{{$admin->status==0 ? 'disable' : 'enable'}}</td>
+                                                <td>{{$user->email}}</td>
+                                                <td>{{$user->user_type==0 ? 'user' : 'admin'}}</td>
+												<td>{{$user->status==0 ? 'disable' : 'enable'}}</td>
+
                                                 <td class=" text-center">
 												  <div class="form-group">
-                                                    <a href="{{route('admins.edit',$admin)}}" class="mt-4 btn btn-primary">ویرایش</a> 
+                                                    <a href="{{route('users.edit',$user)}}" class="mt-4 btn btn-primary">ویرایش</a> 
 													<a href="#" class="mt-4 btn btn-success">جزِییات</a>
                                                   </div>
                                                 </td>
