@@ -6,13 +6,8 @@ use App\Http\Requests\StoreCategorieRequest;
 use App\Http\Requests\UpdateCategorieRequest;
 use App\Models\Categorie;
 use GuzzleHttp\Psr7\Request;
-<<<<<<< HEAD:app/Http/Controllers/Admin/CategorieController.php
 use App\Http\Controllers\Controller;
-
-=======
 use Illuminate\Auth\Events\Validated;
->>>>>>> ed498ee46684603cf1b69529b51a644adc568127:app/Http/Controllers/CategorieController.php
-
 class CategorieController extends Controller
 {
     /**

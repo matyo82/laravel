@@ -18,7 +18,9 @@ Route::get('/', function () {
 });
 
 
-Route::get('shop' , [Shop::class , 'index']);
+Route::get('shop' , [\App\Http\Controllers\front\Shop::class , 'index']);
 Route::get('test' , function(){
           return view('front/product-details');
 }); // for check views
+
+Auth::routes();

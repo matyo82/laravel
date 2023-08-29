@@ -43,12 +43,13 @@ return [
             'visibility' => 'public',
             'throw' => false,
         ],
-        'image_nevisandeh' => [
+        /*'image_nevisandeh' => [
             'driver' => 'local',
             'root' => storage_path('app/private/nevisandeh'),
-            'visibility' => 'private',
-
-        ],
+            'url' => env('APP_URL') . '/nevisandeh',
+            'visibility' => 'public',
+            'throw' => false,
+        ],*/
 
         's3' => [
             'driver' => 's3',

@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\AdminUserController;
-use App\Http\Controllers\CategorieController;
-use App\Http\Controllers\NevisandehController;
+use App\Http\Controllers\Admin\AdminUserController;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\CategorieController;
+use App\Http\Controllers\Admin\NevisandehController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,10 +23,10 @@ Route::group([],function () {
                 })->name('admin-index')->middleware('admin');
                 Route::resource('/users', UserController::class)->middleware('admin');
                 Route::resource('/admins', AdminUserController::class)->middleware('admin');
-                Route::resource('/product', ProductController::class)->middleware('admin');
+                Route::resource('/product', \App\Http\Controllers\ProductController::class)->middleware('admin');
                 Route::resource('/categorie', CategorieController::class)->middleware('admin');
                 Route::resource('/nevisandeh', NevisandehController::class)->middleware('admin');
-            
+
                 Route::get('/user/profile', function () {
                     // Uses first & second middleware...
                 })->middleware('admin');
