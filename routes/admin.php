@@ -20,14 +20,14 @@ use Illuminate\Support\Facades\Route;
 Route::group([],function () {
           Route::get('/', function () {
                     return view('admin.index');
-                })->name('admin-index')->middleware('admin');
-                Route::resource('/users', UserController::class)->middleware('admin');
-                Route::resource('/admins', AdminUserController::class)->middleware('admin');
-                Route::resource('/product', \App\Http\Controllers\ProductController::class)->middleware('admin');
-                Route::resource('/categorie', CategorieController::class)->middleware('admin');
-                Route::resource('/nevisandeh', NevisandehController::class)->middleware('admin');
+                })->name('admin.home');
+                Route::resource('/users', UserController::class);
+                Route::resource('/admins', AdminUserController::class);
+                Route::resource('/product', \App\Http\Controllers\ProductController::class);
+                Route::resource('/categorie', CategorieController::class);
+                Route::resource('/nevisandeh', NevisandehController::class);
 
                 Route::get('/user/profile', function () {
                     // Uses first & second middleware...
-                })->middleware('admin');
-});
+                });
+})->middleware('admin');

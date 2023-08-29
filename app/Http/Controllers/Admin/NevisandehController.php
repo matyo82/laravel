@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\StoreNevisandehRequest;
 use App\Http\Requests\UpdateNevisandehRequest;
-use App\Models\Image;
 use App\Models\Nevisandeh;
 use App\Http\Controllers\Controller;
+use Intervention\Image\ImageManagerStatic as Image;
 
 
 class NevisandehController extends Controller
@@ -16,8 +16,8 @@ class NevisandehController extends Controller
      */
     public function index()
     {
-        $list = Nevisandeh::all()->groupBy('id');
-        return view('admin.nevisandeh.list', compact('list'));
+        $users = Nevisandeh::orderBy('id','desc')->get();
+        return view('admin.nevisandeh.list', compact('users'));
     }
 
     /**
@@ -33,25 +33,24 @@ class NevisandehController extends Controller
      */
     public function store(\Illuminate\Http\Request $request)
     {
-//        dd($request);
+  //    dd($request->all());
 
         $request->validate([
             'name' => 'required|min:5|max:255',
             'bio' => 'required|min:25',
-//            'image' => 'required|file|mime:jpeg,png,gif,webp|max:5000',
+            'image' => 'required|file|mimes:jpeg,png,gif,webp|max:5000',
         ]);
+		$inputs=$request->all();
 
-
-        if ($request->hasFile('image')) {
-            $path = $request->file('image')->store('images');
-//            dd($path);
+        if ($request->hasFile('image')) {   
+			$extension='jpeg';
+			$name=\Str::random(10);	
+	        $img = Image::make($request->image)->save(public_path('images/'.$name.'.'.$extension));
+	        //$img = Image::make($request->image)->resize(300,200)->save(public_path('images/'.$name.'.'.$extension));
+	     	$inputs['image']='images/'.$img->basename;
         }
-        $create = Nevisandeh::create([
-            'name' => $request->name,
-            'bio' => $request->bio,
-            'image' => $path,
-        ]);
-        return redirect()->back();
+        $create = Nevisandeh::create($inputs);
+        return to_route('nevisandeh.index');
     }
 
     /**
@@ -67,7 +66,7 @@ class NevisandehController extends Controller
      */
     public function edit(Nevisandeh $nevisandeh)
     {
-        return view('admin.nevisandeh.edite');
+        return view('admin.nevisandeh.edite',compact('nevisandeh'));
     }
 
     /**
@@ -75,7 +74,16 @@ class NevisandehController extends Controller
      */
     public function update(UpdateNevisandehRequest $request, Nevisandeh $nevisandeh)
     {
-        //
+		$inputs=$request->all();
+        if ($request->hasFile('image')) {   
+			$extension='jpeg';
+			$name=\Str::random(10);	
+	        $img = Image::make($request->image)->save(public_path('images/'.$name.'.'.$extension));
+	        //$img = Image::make($request->image)->resize(300,200)->save(public_path('images/'.$name.'.'.$extension));
+     		$inputs['image']='images/'.$img->basename;
+        }
+        $create = $nevisandeh->update($inputs);
+        return to_route('nevisandeh.index');
     }
 
     /**
@@ -83,6 +91,8 @@ class NevisandehController extends Controller
      */
     public function destroy(Nevisandeh $nevisandeh)
     {
-        //
+        $nevisandeh->delete();
+        return to_route('nevisandeh.index');
+
     }
 }

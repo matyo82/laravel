@@ -13,7 +13,7 @@
                             <div class="widget-header">
                                 <div class="row">
                                     <div class="col-xl-12 col-md-12 col-sm-12 col-12">
-                                        <h4>افزودن دستبه بندی کتاب</h4>
+                                        <h4>ویرایش نویسنده</h4>
                                     </div>
                                 </div>
                             </div>
@@ -21,26 +21,54 @@
 
                                 <div class="row">
                                     <div class="col-lg-6 col-12 mx-auto">
-                                        <form method="post">
+                                        <form method="post" enctype="multipart/form-data" action="{{ route('nevisandeh.update',$nevisandeh) }}">
+                                            @csrf
+											@method('put')
                                             <div class="form-group">
                                                 <p>اسم نویسنده:</p>
                                                 <label for="t-text" class="sr-only">اسم نویسنده</label>
-                                                <input id="t-text" type="text" name="txt" placeholder="Some Text..."
-                                                       class="form-control" required>
+                                                <input id="t-text" type="text" name="name" placeholder="Some Text..."
+                                                       class="form-control" value="{{old('name',$nevisandeh->name)}}"  required>
+										       @error('name')
+                                                 <span class="alert_required bg-danger text-white p-1 rounded" role="alert">
+                                                   <strong>
+                                                    {{ $message }}
+                                                   </strong>
+                                                 </span>
+                                                @enderror
 
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleFormControlTextarea1">توضیحات:</label>
-                                                <textarea class="form-control" id="exampleFormControlTextarea1"
-                                                          rows="3"></textarea>
+                                                <textarea name="bio" class="form-control" id="exampleFormControlTextarea1"
+                                                          rows="3">{{old('name',$nevisandeh->bio)}}</textarea>
+														  
+										       @error('bio')
+                                                 <span class="alert_required bg-danger text-white p-1 rounded" role="alert">
+                                                   <strong>
+                                                    {{ $message }}
+                                                   </strong>
+                                                 </span>
+                                                @enderror
                                             </div>
                                             <div class="form-group mb-4 mt-3">
-                                                <label for="exampleFormControlFile1">Example file input</label>
-                                                <input type="file" class="form-control-file"
+                                                <label for="exampleFormControlFile1">تصویر</label>
+                                                <input name="image" type="file" class="form-control-file"
                                                        id="exampleFormControlFile1">
+													   														  
+										       @error('image')
+                                                 <span class="alert_required bg-danger text-white p-1 rounded" role="alert">
+                                                   <strong>
+                                                    {{ $message }}
+                                                   </strong>
+                                                 </span>
+                                                @enderror
+												        <section class="row mt-5">
+                                                           <img src="{{asset($nevisandeh->image)}}" alt="" width="300" height="300">
+                                                        </section>
                                             </div>
                                             <div class="form-group">
-                                                <input type="submit" name="txt" class="mt-4 btn btn-primary">
+                                                <input type="submit" class="mt-4 btn btn-primary">
                                             </div>
 
                                         </form>
@@ -51,15 +79,6 @@
                         </div>
                     </div>
                     <!--       end main             -->
-                </div>
-
-                <div class="row">
-
-                    <div id="form_grid_layouts" class="col-lg-12">
-                        <div class="seperator-header">
-                            <h4 class="">لیست دسته بندی ها</h4>
-                        </div>
-                    </div>
                 </div>
 
             </div>

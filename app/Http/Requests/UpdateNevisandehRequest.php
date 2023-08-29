@@ -11,7 +11,7 @@ class UpdateNevisandehRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,9 @@ class UpdateNevisandehRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required|min:5|max:255',
+            'bio' => 'required|min:25',
+            'image' => 'file|mimes:jpeg,png,gif,webp|max:5000',
         ];
     }
 }

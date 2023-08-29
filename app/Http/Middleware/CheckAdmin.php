@@ -15,10 +15,14 @@ class CheckAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
+		if(auth()->user()){
         if (auth()->user()->user_type == '1'){
             return $next($request);
         }elseif (auth()->user()->user_type == '0'){
-            return redirect('/');
+            return abort(403);
         }
+	  }else{
+		  return to_route('login');
+	  }
     }
 }

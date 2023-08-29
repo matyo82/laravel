@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('front.index');
-});
+})->name('front.home');
 
 
 Route::get('shop' , [\App\Http\Controllers\front\Shop::class , 'index']);

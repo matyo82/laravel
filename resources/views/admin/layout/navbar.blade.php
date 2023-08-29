@@ -1,19 +1,19 @@
 <nav id="topbar">
     <ul class="navbar-nav theme-brand flex-row  text-center">
         <li class="nav-item theme-logo">
-            <a href="{{ route('admin-index') }}">
+            <a href="{{ route('admin.home') }}">
                 <img src="/assets/img/90x90.jpg" class="navbar-logo" alt="logo">
             </a>
         </li>
         <li class="nav-item theme-text">
-            <a href="{{ route('admin-index') }}" class="nav-link"> CORK </a>
+            <a href="{{ route('admin.home') }}" class="nav-link"> CORK </a>
         </li>
     </ul>
 
     <ul class="list-unstyled menu-categories" id="topAccordion">
 
         <li class="menu single-menu active">
-            <a href="{{ route('admin-index') }}" aria-expanded="true"
+            <a href="{{ route('admin.home') }}" aria-expanded="true"
                class="dropdown-toggle autodroprown">
                 <div class="">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -30,7 +30,7 @@
                     <polyline points="6 9 12 15 18 9"></polyline>
                 </svg>
             </a>
-        </li>
+        </li>   
 
         <li class="menu single-menu">
             <a href="{{ route('categorie.index') }}" aria-expanded="false" class="dropdown-toggle">
@@ -85,11 +85,7 @@
             </a>
             <ul class="collapse submenu list-unstyled" id="app" data-parent="#topAccordion">
                 <li>
-<<<<<<< HEAD
                     <a href="{{ route('admins.index') }}"> ادمین</a>
-=======
-                    <a href="{{ route('admin-index') }}"> ادمین</a>
->>>>>>> ed498ee46684603cf1b69529b51a644adc568127
                 </li>
                 <li>
                     <a href="{{ route('users.index') }}"> عادی </a>
@@ -98,7 +94,7 @@
         </li>
 
         <li class="menu single-menu">
-            <a href="{{ route('product.index') }}" aria-expanded="false" class="dropdown-toggle">
+            <a href="#components" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                 <div class="">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -117,10 +113,10 @@
             </a>
             <ul class="collapse submenu list-unstyled" id="components" data-parent="#topAccordion">
                 <li>
-                    <a href="{{ route('product.create') }}"> افزودن محصول </a>
+                    <a href="add-product.html"> افزودن محصول </a>
                 </li>
                 <li>
-                    <a href="{{ route('product.index') }}"> لیست محصولات </a>
+                    <a href="list-product.html"> لیست محصولات </a>
                 </li>
             </ul>
         </li>
