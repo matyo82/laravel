@@ -15,8 +15,20 @@ class AdminUserController extends Controller
      */
     public function index()
     {
-		$admins=User::orderBy('created_at','desc')->where('user_type',1)->get();
-        return view('admin.users.admin.index',compact('admins'));
+        $admins = User::orderBy('created_at', 'desc')->where('user_type', 1)->get();
+        // dd(auth());
+        // User::create([
+        //     'name' => 'mohsen',
+        //     'email' => 'mohsen@gmail.com',
+        //     'password' => 123,
+        //     'user_type' => 1,
+        //     'status' => 1
+        // ]);
+        // auth()->loginUsingId(3);
+        // return auth()->user()->id;
+        $auth_user_id = auth()->user();
+
+        return view('admin.users.admin.index', compact('admins', "auth_user_id"));
     }
 
     /**
@@ -48,8 +60,8 @@ class AdminUserController extends Controller
      */
     public function edit(User $admin)
     {
-		return view('admin.users.admin.edit',compact('admin'));
-	}
+        return view('admin.users.admin.edit', compact('admin'));
+    }
 
     /**
      * Update the specified resource in storage.
@@ -57,7 +69,7 @@ class AdminUserController extends Controller
     public function update(AdminUserRequest $request, User $admin)
     {
         $inputs = $request->all();
-		$admin->update($inputs);
+        $admin->update($inputs);
         return to_route('admins.index');
     }
 
