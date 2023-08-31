@@ -16,7 +16,7 @@ class NevisandehController extends Controller
      */
     public function index()
     {
-        $users = Nevisandeh::orderBy('id','desc')->get();
+        $users = Nevisandeh::orderBy('id', 'desc')->get();
         return view('admin.nevisandeh.list', compact('users'));
     }
 
@@ -33,21 +33,21 @@ class NevisandehController extends Controller
      */
     public function store(\Illuminate\Http\Request $request)
     {
-  //    dd($request->all());
+        //    dd($request->all());
 
         $request->validate([
             'name' => 'required|min:5|max:255',
             'bio' => 'required|min:25',
             'image' => 'required|file|mimes:jpeg,png,gif,webp|max:5000',
         ]);
-		$inputs=$request->all();
+        $inputs = $request->all();
 
-        if ($request->hasFile('image')) {   
-			$extension='jpeg';
-			$name=\Str::random(10);	
-	        $img = Image::make($request->image)->save(public_path('images/'.$name.'.'.$extension));
-	        //$img = Image::make($request->image)->resize(300,200)->save(public_path('images/'.$name.'.'.$extension));
-	     	$inputs['image']='images/'.$img->basename;
+        if ($request->hasFile('image')) {
+            $extension = 'jpeg';
+            $name = \Str::random(10);
+            $img = Image::make($request->image)->save(public_path('images/' . $name . '.' . $extension));
+            //$img = Image::make($request->image)->resize(300,200)->save(public_path('images/'.$name.'.'.$extension));
+            $inputs['image'] = 'images/nevisaneh/' . $img->basename;
         }
         $create = Nevisandeh::create($inputs);
         return to_route('nevisandeh.index');
@@ -66,7 +66,7 @@ class NevisandehController extends Controller
      */
     public function edit(Nevisandeh $nevisandeh)
     {
-        return view('admin.nevisandeh.edite',compact('nevisandeh'));
+        return view('admin.nevisandeh.edite', compact('nevisandeh'));
     }
 
     /**
@@ -74,13 +74,13 @@ class NevisandehController extends Controller
      */
     public function update(UpdateNevisandehRequest $request, Nevisandeh $nevisandeh)
     {
-		$inputs=$request->all();
-        if ($request->hasFile('image')) {   
-			$extension='jpeg';
-			$name=\Str::random(10);	
-	        $img = Image::make($request->image)->save(public_path('images/'.$name.'.'.$extension));
-	        //$img = Image::make($request->image)->resize(300,200)->save(public_path('images/'.$name.'.'.$extension));
-     		$inputs['image']='images/'.$img->basename;
+        $inputs = $request->all();
+        if ($request->hasFile('image')) {
+            $extension = 'jpeg';
+            $name = \Str::random(10);
+            $img = Image::make($request->image)->save(public_path('images/' . $name . '.' . $extension));
+            //$img = Image::make($request->image)->resize(300,200)->save(public_path('images/'.$name.'.'.$extension));
+            $inputs['image'] = 'images/' . $img->basename;
         }
         $create = $nevisandeh->update($inputs);
         return to_route('nevisandeh.index');

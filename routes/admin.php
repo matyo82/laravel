@@ -1,9 +1,9 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminUserController;
-use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\CategorieController;
 use App\Http\Controllers\Admin\NevisandehController;
+use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*

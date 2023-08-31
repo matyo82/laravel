@@ -11,7 +11,7 @@
                     <div class="widget-header">
                         <div class="row">
                             <div class="col-xl-12 col-md-12 col-sm-12 col-12">
-                                <h4>افزودن دستبه بندی کتاب</h4>
+                                <h4>افزودن کتاب</h4>
                             </div>
                         </div>
                     </div>
@@ -19,100 +19,96 @@
 
                         <div class="row">
                             <div class="col-lg-6 col-12 mx-auto">
-                                <form method="post">
+                                <form method="post" enctype="multipart/form-data" action="{{ route('product.store') }}">
+                                    @csrf
                                     <div class="form-group">
                                         <p>اسم کتاب:</p>
                                         <label for="t-text1" class="sr-only">اسم کتاب</label>
-                                        <input id="t-text1" type="text" name="txt" placeholder="Some Text..."
+                                        <input id="t-text1" type="text" name="name-book" placeholder="Some Text..."
                                                class="form-control" required>
 
                                     </div>
                                     <div class="form-row mb-4">
                                         <div class="form-group col-md-6">
                                             <label for="select-55">نویسنده</label>
-                                            <select class="form-control" id="select-55">
-                                                <option>Default select</option>
-                                                <option>One</option>
-                                                <option>Two</option>
-                                                <option>Three</option>
+                                            <select class="form-control" id="select-55" name="nevisande_id">
+                                                @foreach($nevisandeh as $item)
+                                                    <option value="{{ $item[0]->id }}">{{ $item[0]->name }}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="inputPassword5">انتشارات</label>
-                                            <select class="form-control" id="select-1">
-                                                <option>Default select</option>
-                                                <option>One</option>
-                                                <option>Two</option>
-                                                <option>Three</option>
-                                            </select></div>
+                                            <input id="inputPassword5" type="text" name="entesharat"
+                                                   placeholder="متال: انتشارات جنگل"
+                                                   class="form-control" required>
+                                        </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="exampleFormControlTextarea1">توضیحات:</label>
                                         <textarea class="form-control" id="exampleFormControlTextarea1"
-                                                  rows="3"></textarea>
-                                    </div>
-
-                                    <div class="form-row mb-4">
-                                        <div class="form-group col-md-6">
-                                            <label for="inputEmail4">صفحات</label>
-                                            <input type="number" class="form-control" id="inputEmail4"
-                                                   placeholder="عدد وارد کنید">
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="inputPassword4">سری چاپ</label>
-                                            <input type="number" class="form-control" id="inputPassword4"
-                                                   placeholder="سری چاپ">
-                                        </div>
+                                                  rows="3" name="description"></textarea>
                                     </div>
                                     <div class="form-row mb-4">
-                                        <div class="form-group col-md-6">
+                                        <div class="form-group col-md-12">
                                             <label for="inputEmail4">شابک</label>
                                             <input type="number" class="form-control" id="inputEmail4"
-                                                   placeholder="شابک وارد کنید">
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="inputPassword4">سری چاپ</label>
-                                            <input type="number" class="form-control" id="inputPassword4"
-                                                   placeholder="سری چاپ">
+                                                   placeholder="شابک وارد کنید" name="shabak">
                                         </div>
                                     </div>
                                     <div class="form-row mb-4">
                                         <div class="form-group col-md-6">
                                             <label for="inputEmail4">کد کتاب</label>
                                             <input type="number" class="form-control" id="inputEmail4"
-                                                   placeholder="کد کتاب وارد کنید">
+                                                   placeholder="کد کتاب وارد کنید" name="code-book">
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="inputPassword4">مترجم</label>
-                                            <select class="form-control">
-                                                <option>تست یک</option>
-                                                <option>تست دو</option>
-                                                <option>تست سه</option>
-                                            </select>
+                                            <input id="inputPassword4" type="text" name="motarjem"
+                                                   placeholder="متال: قارپو زاده"
+                                                   class="form-control" required>
                                         </div>
                                     </div>
                                     <div class="form-row mb-4">
                                         <div class="form-group col-md-6">
                                             <label for="inputEmail4">قیمت اصلی کتاب</label>
                                             <input type="number" class="form-control" id="inputEmail4"
-                                                   placeholder="قیمت کتاب وارد کنید">
+                                                   placeholder="قیمت کتاب وارد کنید" name="main-price">
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="inputPassword4">قیمت کتاب با تخفیف:</label>
                                             <input type="number" class="form-control" id="inputEmail4"
-                                                   placeholder="قیمت کتاب وارد کنید">
+                                                   placeholder="قیمت کتاب وارد کنید" name="off-price">
                                         </div>
                                     </div>
 
                                     <div class="form-group mb-4 mt-3">
                                         <div class="custom-file mb-4">
-                                            <input type="file" class="custom-file-input" id="customFile">
+                                            <input type="file" class="custom-file-input" id="customFile" name="image">
                                             <label class="custom-file-label" for="customFile">Choose file</label>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <input type="submit" name="txt" class="mt-4 btn btn-primary">
+                                        <div class="form-row mb-4">
+                                            <div class="form-group col-md-6">
+                                                <div class="n-chk">
+                                                    <p>وضعیت انتشار</p>
+                                                    <select class="form-control" id="select-55" name="status">
+                                                            <option value="active">فعال</option>
+                                                            <option value="disabled">غیر فعال</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="inputPassword4">تعداد موجوری در انبار</label>
+                                                <input type="number" class="form-control" id="inputPassword4"
+                                                       placeholder="برای مثال: 222" name="inventory">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="submit" class="mt-4 btn btn-primary">
                                     </div>
 
                                 </form>
@@ -143,7 +139,8 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                          class="feather feather-heart">
-                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        <path
+                            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
                     </svg>
                 </p>
             </div>

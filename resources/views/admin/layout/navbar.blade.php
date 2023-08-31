@@ -30,7 +30,7 @@
                     <polyline points="6 9 12 15 18 9"></polyline>
                 </svg>
             </a>
-        </li>   
+        </li>
 
         <li class="menu single-menu">
             <a href="{{ route('categorie.index') }}" aria-expanded="false" class="dropdown-toggle">
@@ -113,10 +113,10 @@
             </a>
             <ul class="collapse submenu list-unstyled" id="components" data-parent="#topAccordion">
                 <li>
-                    <a href="add-product.html"> افزودن محصول </a>
+                    <a href="{{ route('product.create') }}"> افزودن محصول </a>
                 </li>
                 <li>
-                    <a href="list-product.html"> لیست محصولات </a>
+                    <a href="{{ route('product.index') }}"> لیست محصولات </a>
                 </li>
             </ul>
         </li>
