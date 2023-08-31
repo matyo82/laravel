@@ -20,15 +20,17 @@ class DatabaseSeeder extends Seeder
            */
           public function run(): void
           {
-                    // \App\Models\User::factory(10)->create();
+                    Nevisandeh::factory()
+                              ->has(Product::factory()->count(3))
+                              ->create();
 
                     // \App\Models\User::factory()->create([
                     //     'name' => 'Test User',
                     //     'email' => 'test@example.com',
                     // ]);
 
-                    Schema::disableForeignKeyConstraints();
-                    $this->call(UserSeeder::class);
-                    Schema::enableForeignKeyConstraints();
+                    // Schema::disableForeignKeyConstraints();
+                    // $this->call(UserSeeder::class);
+                    // Schema::enableForeignKeyConstraints();
           }
 }
