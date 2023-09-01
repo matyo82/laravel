@@ -13,40 +13,80 @@
                             <div class="widget-header">
                                 <div class="row">
                                     <div class="col-xl-12 col-md-12 col-sm-12 col-12">
-                                        <h4>افزودن دستبه بندی کتاب</h4>
+                                        <h4>افزودن دسته اصلی</h4>
                                     </div>
                                 </div>
                             </div>
                             <div class="widget-content widget-content-area">
+                                        <form method="post" action="{{ route('category.store') }}">
+										@csrf
 
-                                <div class="row">
-                                    <div class="col-lg-6 col-12 mx-auto">
-                                        <form method="post" action="{{ route('categorie.store') }}">
-                                            @csrf
                                             <div class="form-group">
-                                                <p>نوع دستبه بندی:</p>
-                                                <label for="t-text" class="sr-only">نوع دسته بندی:</label>
-                                                <label>
-                                                    <select class="form-control" name="kay">
-                                                        <option value="mozo">دسته بندی موضوعی</option>
-                                                        <option value="dastan">انواع داستان</option>
-                                                        <option value="javaez">جوایز</option>
-                                                        <option value="melal">ادبیات ملل</option>
-                                                        <option value="sen">گروه سنی</option>
-                                                    </select>
-                                                </label>
-                                            </div>
-                                            <div class="form-group">
-                                                <p>اسم دستبه بندی:</p>
-                                                <label for="t-text" class="sr-only">Text</label>
+                                                <p>نام:</p>
+                                                <label for="t-text" class="sr-only">نام</label>
                                                 <input id="t-text" type="text" name="name" placeholder="Some Text..."
-                                                       class="form-control" required>
-                                                <br>
-                                                <input type="submit" class="mt-4 btn btn-primary">
+                                                       class="form-control" value="{{old('name')}}"   required>
+												@error('name')
+                                                 <span class="alert_required bg-danger text-white p-1 rounded" role="alert">
+                                                   <strong>
+                                                    {{ $message }}
+                                                   </strong>
+                                                 </span>
+                                                @enderror
+
                                             </div>
-                                        </form>
-                                    </div>
-                                </div>
+										
+											
+											<div class="form-group">
+                                                <label for="exampleFormControlTextarea1">نمایش در منو:</label>
+                                                <select class="form-control" name="show_in_menu">
+												 <option value="1">بله</option>
+												 <option value="0"> خیر</option>
+												</select>
+												
+												@error('show_in_menu')
+                                                 <span class="alert_required bg-danger text-white p-1 rounded" role="alert">
+                                                   <strong>
+                                                    {{ $message }}
+                                                   </strong>
+                                                 </span>
+                                                @enderror
+                                            </div>		
+
+											<div class="form-group">
+                                                <label for="exampleFormControlTextarea1">وضعیت:</label>
+                                                <select class="form-control" name="status">
+												 <option value="1">فعال</option>
+												 <option value="0" >غیر فعال</option>
+												</select>
+												
+												@error('status')
+                                                 <span class="alert_required bg-danger text-white p-1 rounded" role="alert">
+                                                   <strong>
+                                                    {{ $message }}
+                                                   </strong>
+                                                 </span>
+                                                @enderror
+                                            </div>
+											
+										    <div class="form-group">
+                                                <label for="exampleFormControlTextarea1">توضیحات:</label>
+                                                <textarea id="t-text" type="text" name="description" class="form-control" required>{{old('description')}}</textarea>
+												@error('description')
+                                                 <span class="alert_required bg-danger text-white p-1 rounded" role="alert">
+                                                   <strong>
+                                                    {{ $message }}
+                                                   </strong>
+                                                 </span>
+                                                @enderror
+                                            </div>  
+											
+											
+                                            <div class="form-group">
+                                                <button class="mt-4 btn btn-primary">submit</button>
+                                            </div>
+
+											</form>
 
                             </div>
                         </div>
@@ -54,14 +94,6 @@
                     <!--       end main             -->
                 </div>
 
-                <div class="row">
-
-                    <div id="form_grid_layouts" class="col-lg-12">
-                        <div class="seperator-header">
-                            <h4 class="">لیست دسته بندی ها</h4>
-                        </div>
-                    </div>
-                </div>
 
             </div>
         </div>
