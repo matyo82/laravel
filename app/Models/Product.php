@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Product extends Model
 {
     use HasFactory;
-    protected $fillable = ['nevisande_id' , 'name' , 'description' , 'price' , 'inventory' , 'image'];
+    protected $fillable = ['nevisande_id' , 'name-book', 'shabak', 'code-book', 'entesharat', 'description' , 'main-price', 'off-price' , 'inventory', 'status','motarjem' , 'image'];
 
     public function nevisandeh()
     {

@@ -74,7 +74,7 @@
 												 <option value="0" @if(old('status', $user->status) == 0) selected @endif>غیر فعال</option>
 												</select>
 												
-												@error('user_type')
+												@error('status')
                                                  <span class="alert_required bg-danger text-white p-1 rounded" role="alert">
                                                    <strong>
                                                     {{ $message }}

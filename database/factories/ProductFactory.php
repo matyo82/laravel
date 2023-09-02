@@ -18,10 +18,10 @@ class ProductFactory extends Factory
           { 
                     return [
                               'name' => fake()->name(),
-                              'description' => fake()->paragraphs(),
+                              'description' => fake()->paragraph(),
                               'price' => range(10000 , 90000),
-                              'inventory' => range(0 , 20),
-                              'image' => null,
+                              // 'inventory' => range(0 , 20),
+                              // 'image' => null,
                     ];
           }
 }
