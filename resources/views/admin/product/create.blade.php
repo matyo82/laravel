@@ -112,7 +112,7 @@
                                     <div class="form-group mb-4 mt-3">
                                         <div class="custom-file mb-4">
                                             <label class="custom-file-label @error('image') is-invalid @enderror" for="customFile">انتخاب تصویر</label>
-                                            <input type="file" class="custom-file-input" id="customFile" name="image" value="{{ old('image') }}">
+                                            <input type="file" class="custom-file-input" id="customFile" name="image">
                                             @error('image')
                                                 <div class="alert alert-danger mt-4">{{ $message }}</div>
                                             @enderror

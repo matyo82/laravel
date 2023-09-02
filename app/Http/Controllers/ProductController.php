@@ -61,9 +61,10 @@ class ProductController extends Controller
                     unset($validated['nevisande_id']);
                     
                     if($nevisandeh->products()->create($validated)){
-                              session()->flash('product-generated' , 'محصول با موفقیت ایجاد شد!');
+                              session()->flash('success' , 'محصول با موفقیت ایجاد شد!');
                     }else{
                               Storage::delete($fullPath);
+                              session()->flash('failed' , 'ایجاد محصول با خطا مواجه شد');
                     }
                     return to_route('product.create');
           }

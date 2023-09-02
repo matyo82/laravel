@@ -21,55 +21,39 @@
 
                                 <div class="row">
                                     <div class="col-lg-6 col-12 mx-auto">
-                                        <form method="post" enctype="multipart/form-data"
-                                              action="{{ route('nevisandeh.store') }}">
+                                        <form method="post" enctype="multipart/form-data" action="{{ route('nevisandeh.store') }}">
                                             @csrf
                                             <div class="form-group">
                                                 <p>اسم نویسنده:</p>
                                                 <label for="t-text" class="sr-only">اسم نویسنده</label>
-                                                <input id="t-text" type="text" name="name" placeholder="Some Text..."
-                                                       class="form-control" required>
-                                                @error('name')
-                                                <span class="alert_required bg-danger text-white p-1 rounded"
-                                                      role="alert">
-                                                   <strong>
-                                                    {{ $message }}
-                                                   </strong>
-                                                 </span>
+                                                <input id="t-text" type="text" name="name" placeholder="Some Text..." class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}" required>
+                                                @error('inventory')
+                                                    <div class="alert alert-danger mt-1">{{ $message }}</div>
                                                 @enderror
 
                                             </div>
+                                            
                                             <div class="form-group">
                                                 <label for="exampleFormControlTextarea1">توضیحات:</label>
-                                                <textarea name="bio" class="form-control"
-                                                          id="exampleFormControlTextarea1"
-                                                          rows="3"></textarea>
+                                                <textarea name="bio" class="form-control @error('bio') is-invalid @enderror" id="exampleFormControlTextarea1" rows="3" value="{{ old('bio') }}"></textarea>
 
                                                 @error('bio')
-                                                <span class="alert_required bg-danger text-white p-1 rounded"
-                                                      role="alert">
-                                                   <strong>
-                                                    {{ $message }}
-                                                   </strong>
-                                                 </span>
+                                                    <div class="alert alert-danger mt-1">{{ $message }}</div>
                                                 @enderror
                                             </div>
-                                            <div class="form-group mb-4 mt-3">
-                                                <label for="exampleFormControlFile1">تصویر</label>
-                                                <input name="image" type="file" class="form-control-file"
-                                                       id="exampleFormControlFile1">
 
-                                                @error('image')
-                                                <span class="alert_required bg-danger text-white p-1 rounded"
-                                                      role="alert">
-                                                   <strong>
-                                                    {{ $message }}
-                                                   </strong>
-                                                 </span>
-                                                @enderror
+                                            <div class="form-group mb-4 mt-4">
+                                                <div class="custom-file mb-4">
+                                                    <label class="custom-file-label @error('image') is-invalid @enderror" for="customFile">انتخاب تصویر</label>
+                                                    <input type="file" class="custom-file-input" id="customFile" name="image">
+                                                    @error('image')
+                                                        <div class="alert alert-danger mt-4">{{ $message }}</div>
+                                                    @enderror
+                                                </div>
                                             </div>
+
                                             <div class="form-group">
-                                                <input type="submit" class="mt-4 btn btn-primary">
+                                                <button type="submit" class="mt-4 btn btn-primary">افزودن نویسنده</button>
                                             </div>
 
                                         </form>
@@ -91,11 +75,8 @@
             </div>
             <div class="footer-section f-section-2">
                 <p class="">Coded with
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                         class="feather feather-heart">
-                        <path
-                            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
                     </svg>
                 </p>
             </div>
