@@ -22,7 +22,11 @@ return new class extends Migration
                               $table->integer('inventory');
                               $table->string('image')->nullable();
                               $table->timestamps();
-                    });
+                        $table->string('published_date')->nullable();
+                        $table->bigInteger('categorie_id')->unsigned();
+                        $table->foreign('categorie_id')
+                            ->references('id')
+                            ->on('categories');                    });
           }
 
           /**
