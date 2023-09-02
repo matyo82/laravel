@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en-US">
+<html class="no-js" lang="en-US" dir="rtl">
+
 <head>
     @include('front.layouts.head-tag')
     @yield('head-tag')
+    @vite(['resources/sass/app.scss', 'resources/js/app.js', 'resources/css/app.css'])
 </head>
 
 
 <body>
-   <div class="main-wrapper">
-    @include('front.layouts.header')
-      
-	  <div class="mobile-off-canvas-active">
+    <div class="main-wrapper">
+        @include('front.layouts.header')
+
+        <div class="mobile-off-canvas-active">
             <a class="mobile-aside-close"><i class="la la-close"></i></a>
             <div class="header-mobile-aside-wrap">
                 <div class="mobile-search">
@@ -142,15 +144,16 @@
                 </div>
             </div>
         </div>
-       
 
-    @yield('content')
-	
 
-    @include('front.layouts.footer')
-    @include('front.layouts.modal')
-    @include('front.layouts.script')
-    @yield('script')
-	</div>
+        @yield('content')
+
+
+        @include('front.layouts.footer')
+        @include('front.layouts.modal')
+        @include('front.layouts.script')
+        @yield('script')
+    </div>
 </body>
+
 </html>

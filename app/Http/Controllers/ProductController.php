@@ -36,29 +36,22 @@ class ProductController extends Controller
           public function store(Request $request)
           {
                     $validated = $request->validate([
-                              'name-book' => 'required|min:5|max:255',
+                              'name_book' => 'required|min:5|max:255',
                               'nevisande_id' => 'required|exists:nevisandehs,id',
                               'entesharat' => 'required|min:5|max:255',
                               'description' => 'required|min:35',
                               'shabak' => 'min:7',
-                              'code-book' => 'required|min:7',
+                              'code_book' => 'required|min:7',
                               'motarjem' => 'required|min:5',
-                              'main-price' => 'required|min:4',
-                              'off-price' => 'min:4',
+                              'main_price' => 'required|min:4',
+                              'off_price' => 'min:4',
                               'status' => ['required' , Rule::in(['active', 'disabled'])],
                               'inventory' => 'required|min:1',
                               'image' => 'required|file|mimes:jpeg,png,gif,webp|max:5000',
                     ]);
 
-                    $validated['main-price'] = intval($validated['main-price']);
-                    $validated['off-price'] = intval($validated['off-price']);
-                    $validated['inventory'] = intval($validated['inventory']);
-
                     if ($request->hasFile('image')) {
-                              // $image = $request->file('image');
-                              // $extension = $image->getClientOriginalExtension();
-                              // $ImageFullName = $request->name .  \Str::random(10) . '.' . $extension;
-                              $path = 'images/products';
+                              $path = 'public/images/products';
                               $fullPath = $request->file('image')->store($path);
                               //$img = Image::make($request->image)->resize(300,200)->save(public_path('images/'.$name.'.'.$extension));
                               $validated['image'] = $fullPath;
@@ -68,7 +61,7 @@ class ProductController extends Controller
                     unset($validated['nevisande_id']);
                     
                     if($nevisandeh->products()->create($validated)){
-                              session()->flash('product-generated');
+                              session()->flash('product-generated' , 'محصول با موفقیت ایجاد شد!');
                     }else{
                               Storage::delete($fullPath);
                     }

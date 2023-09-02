@@ -15,14 +15,14 @@ return new class extends Migration
                               $table->unsignedBigInteger('nevisandeh_id');
                               $table->foreign('nevisandeh_id')->references('id')->on('nevisandehs');
                               $table->id();
-                              $table->string('name-book');
+                              $table->string('name_book');
                               $table->string('entesharat')->nullable();
                               $table->text('description')->nullable();
                               $table->string('shabak')->nullable();
-                              $table->string('code-book')->index();
+                              $table->string('code_book')->index();
                               $table->string('motarjem')->nullable();
-                              $table->bigInteger('main-price');
-                              $table->bigInteger('off-price');
+                              $table->bigInteger('main_price');
+                              $table->bigInteger('off_price');
                               $table->integer('inventory');
                               $table->string('image')->nullable();
                               $table->string('status');
