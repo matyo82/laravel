@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateCategorieRequest extends FormRequest
+class ChildrenCategoryRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,6 +26,7 @@ class UpdateCategorieRequest extends FormRequest
                 'description' => 'required|max:500|min:5',
                 'status' => 'required|numeric|in:0,1',
                 'show_in_menu' => 'required|numeric|in:0,1',
+                'parent_id' => 'nullable|min:1|max:100000000|exists:categories,id',
         ];
     }
 }

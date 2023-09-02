@@ -33,7 +33,7 @@
         </li>
 
         <li class="menu single-menu">
-            <a href="{{ route('categorie.index') }}" aria-expanded="false" class="dropdown-toggle">
+            <a href="{{ route('category.index') }}" aria-expanded="false" class="dropdown-toggle">
                 <div class="">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -59,10 +59,10 @@
             </a>
             <ul class="collapse submenu list-unstyled" id="app" data-parent="#topAccordion">
                 <li>
-                    <a href="{{ route('categorie.index') }}"> لیست دسته بندی‌ها </a>
-                </li>
-                <li>
-                    <a href="{{ route('categorie.create') }}"> افزودن دسته بندی‌ها </a>
+                    <a href="{{ route('category.index') }}"> دسته بندی‌های اصلی </a>
+                </li>        
+				<li>
+                    <a href="{{ route('category-childs.index') }}">زیردسته ها</a>
                 </li>
             </ul>
         </li>
@@ -122,7 +122,7 @@
         </li>
 
         <li class="menu single-menu">
-            <a href="{{ route('nevisandeh.index') }}" aria-expanded="false" class="dropdown-toggle">
+            <a aria-expanded="false" class="dropdown-toggle">
                 <div class="">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -139,11 +139,9 @@
             </a>
             <ul class="collapse submenu list-unstyled" id="uiKit" data-parent="#topAccordion">
                 <li>
-                    <a href="{{ route('nevisandeh.create') }}"> افزودن نویسنده </a>
+                    <a href="{{ route('nevisandeh.index') }}"> لیست تمام نویسندگان </a>
                 </li>
-                <li>
-                    <a href="{{ route('nevisandeh.index') }}"> لیست افزونه ها </a>
-                </li>
+
             </ul>
         </li>
 

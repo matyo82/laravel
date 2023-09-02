@@ -4,7 +4,7 @@
     <div class="layout-px-spacing">
         <div class="page-header">
             <div class="page-title">
-                <h3>داشتبورد ...</h3>
+                <h3>داشبورد</h3>
             </div>
         </div>
 

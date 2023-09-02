@@ -13,14 +13,14 @@
                                 <div class="widget-header">
                                     <div class="row">
                                         <div class="col-xl-12 col-md-12 col-sm-12 col-12">
-                                            <h4> دسته بندیهای اصلی </h4>
+                                            <h4> زیر دسته های دسته های اصلی</h4>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="widget-content widget-content-area">
                                     <div class="table-responsive">
 												 <div class="form-group">
-													<a href="{{route('category.create')}}" class="mt-4 btn btn-success">ایجاد</a>
+													<a href="{{route('category-childs.create')}}" class="mt-4 btn btn-success">ایجاد</a>				
                                                   </div>   
                                         <table class="table table-bordered table-striped mb-4">
                                             <thead>
@@ -32,22 +32,22 @@
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            @foreach($categories as $category)
+                                            @foreach($category_childs as $category_child)
 											<tr>
                                                 <td>
                                                     <div class="d-flex">
                                                         <div class="usr-img-frame mr-2 rounded-circle">
                                                         </div>
-                                                        <p class="align-self-center mb-0">{{$category->name}}</p>
+                                                        <p class="align-self-center mb-0">{{$category_child->name}}</p>
                                                     </div>
                                                 </td>
-                                                <td>{{$category->parent->name ?? 'ندارد'}}</td>
-												<td>{{$category->status==0 ? 'disable' : 'enable'}}</td>
+                                                <td>{{$category_child->parent->name}}</td>
+												<td>{{$category_child->status==0 ? 'disable' : 'enable'}}</td>
 
                                                 <td class=" text-center">
 												  <div class="form-group">
-                                                    <a href="{{route('category.edit',$category)}}" class="mt-4 btn btn-primary">ویرایش</a> 
-                                                   <form class="d-inline" action="{{route('category.destroy',$category)}}" method="post">
+                                                    <a href="{{route('category-childs.edit',$category_child)}}" class="mt-4 btn btn-primary">ویرایش</a> 
+                                                   <form class="d-inline" action="{{route('category-childs.destroy',$category_child)}}" method="post">
                                                    @csrf
                                                    {{ method_field('delete') }}
                                                    <button class="mt-4 btn btn-danger"type="submit"><i class="fa fa-trash-alt"></i> حذف</button>
