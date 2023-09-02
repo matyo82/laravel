@@ -23,4 +23,4 @@ Route::get('test' , function(){
           return view('front/product-details');
 }); // for check views
 
-// Auth::routes();
+ Auth::routes();

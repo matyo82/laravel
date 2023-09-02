@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class CheckAdmin
+class CheckAdmin 
 {
     /**
      * Handle an incoming request.
@@ -15,13 +15,13 @@ class CheckAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
-		if(auth()->user()){
+	if(auth()->user()){
         if (auth()->user()->user_type == '1'){
             return $next($request);
         }elseif (auth()->user()->user_type == '0'){
             return abort(403);
         }
-	  }else{
+	}else{
 		  return to_route('login');
 	  }
     }

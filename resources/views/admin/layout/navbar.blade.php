@@ -84,12 +84,14 @@
                 </svg>
             </a>
             <ul class="collapse submenu list-unstyled" id="app" data-parent="#topAccordion">
-                <li>
+			@if(auth()->user()->user_type==2)
+			   <li>
                     <a href="{{ route('admins.index') }}"> ادمین</a>
                 </li>
+			@endif
                 <li>
                     <a href="{{ route('users.index') }}"> عادی </a>
-                </li>
+                </li>        
             </ul>
         </li>
 

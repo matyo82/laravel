@@ -19,8 +19,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group([ ] , function () {
-          Route::get('/', function () {
+Route::middleware('admin')->prefix('')->group(function () {
+                Route::get('/', function () {
                     return view('admin.index');
                 })->name('admin.home');
                 Route::resource('/users', UserController::class);
@@ -32,4 +32,4 @@ Route::group([ ] , function () {
                 Route::get('/user/profile', function () {
                     // Uses first & second middleware...
                 });
-})->middleware('admin');
+});
