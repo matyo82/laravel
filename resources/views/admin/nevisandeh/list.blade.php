@@ -18,8 +18,8 @@
                                     </div>
                                 </div>
                                 <div class="widget-content widget-content-area">
-                                    <div class="form-group">
-                                        <a href="{{ route('nevisandeh.create') }}" class="mt-4 btn btn-success">ایجاد</a>
+                                    <div class="form-group d-flex justify-content-end">
+                                        <a href="{{ route('nevisandeh.create') }}" class="btn btn-success">ایجاد</a>
                                     </div>
                                     <div class="table-responsive">
                                         <table class="table table-bordered table-striped mb-4">
@@ -39,8 +39,8 @@
                                                                 <p style="padding-right: 15px " class="align-self-center mb-0">{{ $user->name }}</p>
                                                             </div>
                                                         </td>
-                                                        <td>
-                                                            <img width="150" height="90" src="{{ asset($user->image) }}">
+                                                        <td class="d-flex justify-content-center ">
+                                                            <img width="150" height="90" src="{{ Illuminate\Support\Facades\Storage::Url($nevisandeh->image) }}">
                                                         </td>
                                                         <td>{{ $user->created_at }}</td>
                                                         <td class=" text-center">
