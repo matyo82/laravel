@@ -21,7 +21,7 @@ class AdminUserRequest extends FormRequest
      */
     public function rules(): array
     {
-   if ($this->isMethod('post')) {
+        if ($this->isMethod('post')) {
             return [
                 'name' => 'required|max:120|min:2|max:50',
                 'email' => ['required', 'string', 'email', 'unique:users'],

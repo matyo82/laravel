@@ -22,11 +22,11 @@ class ChildrenCategoryRequest extends FormRequest
     public function rules(): array
     {
         return [
-                'name' => 'required|max:120|min:2',
-                'description' => 'required|max:500|min:5',
-                'status' => 'required|numeric|in:0,1',
-                'show_in_menu' => 'required|numeric|in:0,1',
-                'parent_id' => 'nullable|min:1|max:100000000|exists:categories,id',
+            'name' => 'required|max:120|min:2',
+            'description' => 'required|max:500|min:5',
+            'status' => 'required|numeric|in:0,1',
+            'show_in_menu' => 'required|numeric|in:0,1',
+            'parent_id' => 'nullable|min:1|max:100000000|exists:categories,id',
         ];
     }
 }

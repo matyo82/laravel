@@ -60,8 +60,8 @@
             <ul class="collapse submenu list-unstyled" id="app" data-parent="#topAccordion">
                 <li>
                     <a href="{{ route('category.index') }}"> دسته بندی‌های اصلی </a>
-                </li>        
-				<li>
+                </li>
+                <li>
                     <a href="{{ route('category-childs.index') }}">زیردسته ها</a>
                 </li>
             </ul>
@@ -105,11 +105,7 @@
                         <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
                         <line x1="12" y1="22.08" x2="12" y2="12"></line>
                     </svg>
-<<<<<<< HEAD
-                    <span> محصولات </span>
-=======
                     <span>محصولات</span>
->>>>>>> 8f282d0208cdc80de1eafb5e0a13092fcc55bb5a
                 </div>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -188,7 +184,7 @@
         </li>
 
         <li class="menu single-menu">
-            <a href="requeest-book.html" aria-expanded="false" class="dropdown-toggle">
+            <a href="{{ route('book-request.create') }}" aria-expanded="false" class="dropdown-toggle">
                 <div class="">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"

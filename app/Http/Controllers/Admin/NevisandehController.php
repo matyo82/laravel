@@ -93,6 +93,5 @@ class NevisandehController extends Controller
     {
         $nevisandeh->delete();
         return to_route('nevisandeh.index');
-
     }
 }
