@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Nevisandeh>
@@ -19,7 +20,7 @@ class NevisandehFactory extends Factory
                     return [
                               'name' => fake()->name(),
                               'bio' => fake()->paragraph(),
-                              'image' => 'l;asjdlfasjdflajsldf'
+                              'image' => 'public/images/fakes/person.avif'
                     ];
           }
 }

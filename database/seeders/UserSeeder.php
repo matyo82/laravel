@@ -9,12 +9,11 @@ use Illuminate\Support\Facades\DB;
 
 class UserSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
-    public function run(): void
-    {
-         DB::statement('truncate users');
-            User::factory(10)->create();
-    }
+          /**
+           * Run the database seeds.
+           */
+          public function run(): void
+          {
+                    User::factory(10)->create();
+          }
 }

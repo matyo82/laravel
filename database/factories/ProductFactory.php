@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Product>
@@ -17,11 +18,17 @@ class ProductFactory extends Factory
           public function definition(): array
           { 
                     return [
-                              'name' => fake()->name(),
+                              'name_book' => fake()->name(),
+                              'entesharat' => fake()->lastName(),
                               'description' => fake()->paragraph(),
-                              'price' => range(10000 , 90000),
-                              // 'inventory' => range(0 , 20),
-                              // 'image' => null,
+                              'shabak' => rand(1000000 , 9999999),
+                              'code_book' => rand(1000000 , 9999999),
+                              'entesharat' => fake()->lastName(),
+                              'main_price' => rand(100000 , 900000),
+                              'off_price' => rand(100000 , 900000),
+                              'inventory' => rand(0 , 20),
+                              'image' => 'public/images/fakes/cart.avif',
+                              'status' => 'active' || 'disabled'
                     ];
           }
 }
