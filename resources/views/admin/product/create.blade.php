@@ -19,7 +19,7 @@
 
                               @if (session()->has('product-generated'))
                                   <div class="alert alert-success col-lg-6 col-12 mx-auto fs-5 text-center" role="alert">
-                                      محصول با موفقیت ایجاد شد!
+                                      {{ session()->get('product-generated') }}
                                   </div>
                               @endif
                               
@@ -30,8 +30,8 @@
                                     <div class="form-group">
                                         <p>اسم کتاب:</p>
                                         <label for="t-text1" class="sr-only">اسم کتاب</label>
-                                        <input id="t-text1" type="text" name="name-book" placeholder="Some Text..." class="form-control @error('name-book') is-invalid @enderror" value="{{ old('name-book') }}" required>
-                                        @error('name-book')
+                                        <input id="t-text1" type="text" name="name_book" placeholder="Some Text..." class="form-control @error('name_book') is-invalid @enderror" value="{{ old('name_book') }}" required>
+                                        @error('name_book')
                                             <div class="alert alert-danger mt-1">{{ $message }}</div>
                                         @enderror
                                     </div>
@@ -78,7 +78,7 @@
                                     <div class="form-row mb-4">
                                         <div class="form-group col-md-6">
                                             <label for="inputEmail4">کد کتاب</label>
-                                            <input type="number" class="form-control @error('code-book') is-invalid @enderror" id="inputEmail4" placeholder="کد کتاب وارد کنید" name="code-book" value="{{ old('code-book') }}">
+                                            <input type="number" class="form-control @error('code_book') is-invalid @enderror" id="inputEmail4" placeholder="کد کتاب وارد کنید" name="code_book" value="{{ old('code_book') }}">
                                             @error('code-book')
                                                 <div class="alert alert-danger mt-1">{{ $message }}</div>
                                             @enderror
@@ -95,15 +95,15 @@
                                     <div class="form-row mb-4">
                                         <div class="form-group col-md-6">
                                             <label for="inputEmail4">قیمت اصلی کتاب</label>
-                                            <input type="number" class="form-control @error('main-price') is-invalid @enderror" id="inputEmail4" placeholder="قیمت کتاب وارد کنید" name="main-price" value="{{ old('main-price') }}">
-                                            @error('main-price')
+                                            <input type="number" class="form-control @error('main_price') is-invalid @enderror" id="inputEmail4" placeholder="قیمت کتاب وارد کنید" name="main_price" value="{{ old('main_price') }}">
+                                            @error('main_price')
                                                 <div class="alert alert-danger mt-1">{{ $message }}</div>
                                             @enderror
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="inputPassword4">قیمت کتاب با تخفیف:</label>
-                                            <input type="number" class="form-control @error('off-price') is-invalid @enderror" id="inputEmail4" placeholder="قیمت کتاب وارد کنید" name="off-price" value="{{ old('off-price') }}">
-                                            @error('off-price')
+                                            <input type="number" class="form-control @error('off_price') is-invalid @enderror" id="inputEmail4" placeholder="قیمت کتاب وارد کنید" name="off_price" value="{{ old('off_price') }}">
+                                            @error('off_price')
                                                 <div class="alert alert-danger mt-1">{{ $message }}</div>
                                             @enderror
                                         </div>
@@ -112,7 +112,7 @@
                                     <div class="form-group mb-4 mt-3">
                                         <div class="custom-file mb-4">
                                             <label class="custom-file-label @error('image') is-invalid @enderror" for="customFile">انتخاب تصویر</label>
-                                            <input type="file" class="custom-file-input" id="customFile" name="image" value="{{ old('image') }}">
+                                            <input type="file" class="custom-file-input" id="customFile" name="image">
                                             @error('image')
                                                 <div class="alert alert-danger mt-4">{{ $message }}</div>
                                             @enderror
@@ -144,7 +144,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <input type="submit" class="mt-4 btn btn-primary">
+                                        <button type="submit" class="mt-4 btn btn-primary">افزودن محصول</button>
                                     </div>
 
                                 </form>

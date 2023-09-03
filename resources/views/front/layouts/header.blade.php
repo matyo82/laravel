@@ -11,21 +11,21 @@
                             <div class="main-menu menu-common-style menu-lh-1 menu-margin-4 menu-font-3 ml-20 menu-others-page">
                                 <nav>
                                     <ul>
-                                        <li class="angle-shape"><a href="index.html">Home</a>
+                                        <li class="angle-shape"><a href="index.html">خانه</a>
                                             <ul class="submenu">
-                                                <li><a href="index.html">Home version 1 </a></li>
-                                                <li><a href="index-2.html">Home version 2 </a></li>
-                                                <li><a href="index-3.html">Home version 3 </a></li>
-                                                <li><a href="index-4.html">Home version 4 </a></li>
-                                                <li><a href="index-5.html">Home version 5 </a></li>
-                                                <li><a href="index-6.html">Home version 6 </a></li>
-                                                <li><a href="index-7.html">Home version 7 </a></li>
-                                                <li><a href="index-8.html">Home version 8 </a></li>
-                                                <li><a href="index-9.html">Home version 9 </a></li>
-                                                <li><a href="index-10.html">Home version 10 </a></li>
+                                                <li><a href="index.html">خانه 1 </a></li>
+                                                <li><a href="index-2.html">خانه 2 </a></li>
+                                                <li><a href="index-3.html">خانه 3 </a></li>
+                                                <li><a href="index-4.html">خانه 4 </a></li>
+                                                <li><a href="index-5.html">خانه 5 </a></li>
+                                                <li><a href="index-6.html">خانه 6 </a></li>
+                                                <li><a href="index-7.html">خانه 7 </a></li>
+                                                <li><a href="index-8.html">خانه 8 </a></li>
+                                                <li><a href="index-9.html">خانه 9 </a></li>
+                                                <li><a href="index-10.html">خانه 10 </a></li>
                                             </ul>
                                         </li>
-                                        <li class="angle-shape"><a href="shop.html">Shop </a>
+                                        <li class="angle-shape"><a href="shop.html">فروشگاه </a>
                                             <ul class="mega-menu">
                                                 <li><a class="menu-title" href="#">Shop Layout</a>
                                                     <ul>
@@ -64,20 +64,20 @@
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li><a href="shop.html">Mens</a></li>
-                                        <li class="angle-shape"><a href="#">Pages</a>
+                                        <li><a href="shop.html">منو ها</a></li>
+                                        <li class="angle-shape"><a href="#">صفحات</a>
                                             <ul class="submenu">
-                                                <li><a href="about-us.html">about us </a></li>
-                                                <li><a href="cart.html">cart page </a></li>
-                                                <li><a href="checkout.html">checkout </a></li>
+                                                <li><a href="about-us.html">درباره ما </a></li>
+                                                <li><a href="cart.html">سبد خرید </a></li>
+                                                <li><a href="checkout.html">پرداخت </a></li>
                                                 <li><a href="compare.html">compare </a></li>
                                                 <li><a href="wishlist.html">wishlist </a></li>
-                                                <li><a href="my-account.html">my account </a></li>
-                                                <li><a href="contact.html">contact us </a></li>
-                                                <li><a href="login-register.html">login/register </a></li>
+                                                <li><a href="my-account.html">حساب من </a></li>
+                                                <li><a href="contact.html">ارتباط با ما </a></li>
+                                                <li><a href="login-register.html">ورود/عضویت </a></li>
                                             </ul>
                                         </li>
-                                        <li class="angle-shape"><a href="blog.html">Blog</a>
+                                        <li class="angle-shape"><a href="blog.html">بلاگ</a>
                                             <ul class="submenu">
                                                 <li><a href="blog.html">standard style </a></li>
                                                 <li><a href="blog-2col.html">blog 2 column </a></li>
@@ -85,7 +85,7 @@
                                                 <li><a href="blog-details.html">blog details </a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="contact.html">Contact</a></li>
+                                        <li><a href="contact.html">ارتباط</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -105,7 +105,7 @@
                                     </button>
                                     <div class="shopping-cart-content">
                                         <div class="shopping-cart-top">
-                                            <h4>Your Cart</h4>
+                                            <h4>سبد شما</h4>
                                             <a class="cart-close" href="#"><i class="la la-close"></i></a>
                                         </div>
                                         <ul>
@@ -160,7 +160,7 @@
                                                 <h4>Subtotal <span class="shop-total">$290.00</span></h4>
                                             </div>
                                             <div class="shopping-cart-btn btn-hover default-btn text-center">
-                                                <a class="black-color" href="checkout.html">Continue to Chackout</a>
+                                                <a class="black-color" href="checkout.html">ادامه فرایند پرداخت</a>
                                             </div>
                                         </div>
                                     </div>
@@ -205,7 +205,7 @@
                                     </button>
                                     <div class="shopping-cart-content">
                                         <div class="shopping-cart-top">
-                                            <h4>Your Cart</h4>
+                                            <h4>سبد شما</h4>
                                             <a class="cart-close" href="#"><i class="la la-close"></i></a>
                                         </div>
                                         <ul>
@@ -260,7 +260,7 @@
                                                 <h4>Subtotal <span class="shop-total">$290.00</span></h4>
                                             </div>
                                             <div class="shopping-cart-btn btn-hover default-btn text-center">
-                                                <a class="black-color" href="checkout.html">Continue to Chackout</a>
+                                                <a class="black-color" href="checkout.html">ادامه فرایند پرداخت</a>
                                             </div>
                                         </div>
                                     </div>

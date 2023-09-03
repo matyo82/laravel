@@ -6,7 +6,7 @@
             </a>
         </li>
         <li class="nav-item theme-text">
-            <a href="{{ route('admin.home') }}" class="nav-link"> CORK </a>
+            <a href="{{ route('admin.home') }}" class="nav-link">فروشگاه کتاب</a>
         </li>
     </ul>
 
@@ -21,7 +21,7 @@
                         <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                         <polyline points="9 22 9 12 15 12 15 22"></polyline>
                     </svg>
-                    <span>Dashboard</span>
+                    <span>داشبورد</span>
                 </div>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -84,12 +84,14 @@
                 </svg>
             </a>
             <ul class="collapse submenu list-unstyled" id="app" data-parent="#topAccordion">
-                <li>
+			@if(auth()->user()->user_type==2)
+			   <li>
                     <a href="{{ route('admins.index') }}"> ادمین</a>
                 </li>
+			@endif
                 <li>
                     <a href="{{ route('users.index') }}"> عادی </a>
-                </li>
+                </li>        
             </ul>
         </li>
 

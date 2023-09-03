@@ -20,14 +20,9 @@ class DatabaseSeeder extends Seeder
            */
           public function run(): void
           {
-                    Nevisandeh::factory()
+                    Nevisandeh::factory(10)
                               ->has(Product::factory()->count(3))
                               ->create();
-
-                    // \App\Models\User::factory()->create([
-                    //     'name' => 'Test User',
-                    //     'email' => 'test@example.com',
-                    // ]);
 
                     // Schema::disableForeignKeyConstraints();
                     // $this->call(UserSeeder::class);

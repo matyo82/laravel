@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,10 +18,24 @@ Route::get('/', function () {
     return view('front.index');
 })->name('front.home');
 
-
 Route::get('shop' , [\App\Http\Controllers\front\Shop::class , 'index']);
-Route::get('test' , function(){
-          return view('front/product-details');
+
+ Auth::routes();
+
+
+
+
+ /////////////////////////////////// Test
+ Route::get('test' , function(){
+          return view('front/cart');
 }); // for check views
 
-// Auth::routes();
+Route::get('loogin' , function(){
+          auth()->loginUsingId(1);
+          return 'login success fully ';
+});
+
+Route::get('loogout' , function(){
+          auth()->logout();
+          return 'logout successfully';
+});

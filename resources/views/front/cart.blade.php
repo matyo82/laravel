@@ -2,26 +2,26 @@
 
 
 @section('head-tag')
-    <title>cart</title>
+    <title>سبد خرید</title>
 @endsection
 
 @section('content')
 	   <div class="breadcrumb-area bg-img" style="background-image:url({{asset('front-assets/images/bg/breadcrumb.jpg')}});">
             <div class="container">
                 <div class="breadcrumb-content text-center">
-                    <h2>cart page</h2>
+                    <h2>سبد خرید</h2>
                     <ul>
                         <li>
-                            <a href="index.html">Home</a>
+                            <a href="index.html">خانه</a>
                         </li>
-                        <li class="active">cart </li>
+                        <li class="active">سبد </li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="cart-main-area pt-85 pb-90">
             <div class="container">
-                <h3 class="cart-page-title">Your cart items</h3>
+                <h3 class="cart-page-title">آیتم های سبد شما</h3>
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-12">
                         <form action="#">
@@ -29,12 +29,12 @@
                                 <table>
                                     <thead>
                                         <tr>
-                                            <th>Image</th>
-                                            <th>Product Name</th>
-                                            <th>Until Price</th>
-                                            <th>Qty</th>
-                                            <th>Subtotal</th>
-                                            <th>action</th>
+                                            <th>تصویر</th>
+                                            <th>نام محصول</th>
+                                            <th>قیمت</th>
+                                            <th>تعداد</th>
+                                            <th>قیمت کل</th>
+                                            <th>عملیات</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -96,11 +96,11 @@
                                 <div class="col-lg-12">
                                     <div class="cart-shiping-update-wrapper">
                                         <div class="cart-shiping-update">
-                                            <a href="#">Continue Shopping</a>
+                                            <a href="#">ادامه فرایند خرید</a>
                                         </div>
                                         <div class="cart-clear">
-                                            <button>Update Shopping Cart</button>
-                                            <a href="#">Clear Shopping Cart</a>
+                                            <button>بروز رسانی سبد</button>
+                                            <a href="#">پاکسازی سبد خرید</a>
                                         </div>
                                     </div>
                                 </div>
@@ -167,9 +167,9 @@
                             <div class="col-lg-4 col-md-12">
                                 <div class="grand-totall">
                                     <div class="title-wrap">
-                                        <h4 class="cart-bottom-title section-bg-gary-cart">Cart Total</h4>
+                                        <h4 class="cart-bottom-title section-bg-gary-cart">نتیجه سبد</h4>
                                     </div>
-                                    <h5>Total products <span>$260.00</span></h5>
+                                    <h5>قیمت نهایی<span>$260.00</span></h5>
                                     <div class="total-shipping">
                                         <h5>Total shipping</h5>
                                         <ul>
@@ -178,7 +178,7 @@
                                         </ul>
                                     </div>
                                     <h4 class="grand-totall-title">Grand Total <span>$260.00</span></h4>
-                                    <a href="#">Proceed to Checkout</a>
+                                    <a href="#">پرداخت</a>
                                 </div>
                             </div>
                         </div>
