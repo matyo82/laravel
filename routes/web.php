@@ -18,24 +18,24 @@ Route::get('/', function () {
     return view('front.index');
 })->name('front.home');
 
-Route::get('shop' , [\App\Http\Controllers\front\Shop::class , 'index']);
+Route::get('shop', [\App\Http\Controllers\front\Shop::class, 'index']);
 
- Auth::routes();
-
-
+Auth::routes();
 
 
- /////////////////////////////////// Test
- Route::get('test' , function(){
-          return view('front/cart');
+
+
+/////////////////////////////////// Test
+Route::get('test', function () {
+    return view('front/cart');
 }); // for check views
 
-Route::get('loogin' , function(){
-          auth()->loginUsingId(1);
-          return 'login success fully ';
+Route::get('loogin', function () {
+    auth()->loginUsingId(1);
+    return 'login success fully ';
 });
 
-Route::get('loogout' , function(){
-          auth()->logout();
-          return 'logout successfully';
+Route::get('loogout', function () {
+    auth()->logout();
+    return 'logout successfully';
 });
