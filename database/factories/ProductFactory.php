@@ -28,7 +28,7 @@ class ProductFactory extends Factory
                               'off_price' => rand(100000 , 900000),
                               'inventory' => rand(0 , 20),
                               'image' => 'public/images/fakes/cart.avif',
-                              'status' => 'active' || 'disabled'
+                              'status' => 1,
                     ];
           }
 }

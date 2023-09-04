@@ -16,9 +16,9 @@ class CheckAdmin
     public function handle(Request $request, Closure $next): Response
     {
         if (auth()->user()) {
-            if (auth()->user()->user_type == '1') {
+            if (auth()->user()->user_type == 1 || auth()->user()->user_type == 2) {
                 return $next($request);
-            } elseif (auth()->user()->user_type == '0') {
+            } elseif (auth()->user()->user_type == 0) {
                 return abort(403);
             }
         } else {

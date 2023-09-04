@@ -8,7 +8,7 @@ use Illuminate\Support\Str;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Nevisandeh>
  */
-class NevisandehFactory extends Factory
+class AuthorFactory extends Factory
 {
           /**
            * Define the model's default state.
@@ -20,7 +20,7 @@ class NevisandehFactory extends Factory
                     return [
                               'name' => fake()->name(),
                               'bio' => fake()->paragraph(),
-                              'image' => 'public/images/fakes/person.avif'
+                              'image' => 'public/images/fakes/person.avif',
                     ];
           }
 }

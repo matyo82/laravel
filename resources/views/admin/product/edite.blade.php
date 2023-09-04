@@ -11,108 +11,223 @@
                     <div class="widget-header">
                         <div class="row">
                             <div class="col-xl-12 col-md-12 col-sm-12 col-12">
-                                <h4>افزودن دستبه بندی کتاب</h4>
+                                <h4>ویرایش کتاب</h4>
                             </div>
                         </div>
                     </div>
                     <div class="widget-content widget-content-area">
 
+                              @if (session()->has('product-generated'))
+                                  <div class="alert alert-success col-lg-6 col-12 mx-auto fs-5 text-center" role="alert">
+                                      {{ session()->get('product-generated') }}
+                                  </div>
+                              @endif
+                              
                         <div class="row">
                             <div class="col-lg-6 col-12 mx-auto">
-                                <form method="post">
+                                <form method="post" enctype="multipart/form-data" action="{{ route('product.update',$product) }}">
+                                    @csrf
+									@method('put')
                                     <div class="form-group">
                                         <p>اسم کتاب:</p>
                                         <label for="t-text1" class="sr-only">اسم کتاب</label>
-                                        <input id="t-text1" type="text" name="txt" placeholder="Some Text..."
-                                               class="form-control" required>
-
+                                        <input id="t-text1" type="text" name="name_book" placeholder="Some Text..." class="form-control" value="{{ old('name_book',$product->name_book) }}" required>
+												@error('name_book')
+                                                 <span class="alert_required bg-danger text-white p-1 rounded" role="alert">
+                                                   <strong>
+                                                    {{ $message }}
+                                                   </strong>
+                                                 </span>
+                                                @enderror
                                     </div>
+
                                     <div class="form-row mb-4">
                                         <div class="form-group col-md-6">
                                             <label for="select-55">نویسنده</label>
-                                            <select class="form-control" id="select-55">
-                                                <option>Default select</option>
-                                                <option>One</option>
-                                                <option>Two</option>
-                                                <option>Three</option>
+                                            <select class="form-control" id="select-55" name="author_id" value="{{ old('author_id') }}">
+                                                @foreach ($authors as $author)
+                                                    <option value="{{ old('author_id',$product->author_id)}}" @if(old('author_id', $author->id) == $product->author_id) selected @endif>{{$author->name }}</option>
+                                                @endforeach
                                             </select>
+												@error('author_id')
+                                                 <span class="alert_required bg-danger text-white p-1 rounded" role="alert">
+                                                   <strong>
+                                                    {{ $message }}
+                                                   </strong>
+                                                 </span>
+                                                @enderror
                                         </div>
+										
                                         <div class="form-group col-md-6">
+                                            <label for="select-55">ژانر</label>
+                                            <select class="form-control" id="select-55" name="genre_id" value="{{ old('genre_id') }}">
+                                                @foreach ($genres as $genre)
+                                                    <option value="{{ $genre->id }}" @if(old('genre_id', $genre->id) == $product->genre_id) selected @endif>{{$genre->name }}</option>
+                                                @endforeach
+                                            </select>
+												@error('genre_id')
+                                                 <span class="alert_required bg-danger text-white p-1 rounded" role="alert">
+                                                   <strong> 
+                                                    {{ $message }}
+                                                   </strong>
+                                                 </span>
+                                                @enderror
+                                        </div>  
+										
+										<div class="form-group col-md-12">
+                                            <label for="select-55">رده سنی</label>
+                                            <select class="form-control" id="select-55" name="age_id" value="{{ old('age_id') }}">
+                                                @foreach ($ages as $age)
+                                                    <option value="{{ $age->id }}" @if(old('age_id', $age->id) == $product->age_id) selected @endif>{{$age->name }}</option>
+                                                @endforeach
+                                            </select>
+                                            @error('age_id')
+                                                <div class="alert alert-danger mt-1">{{ $message }}</div>
+                                            @enderror
+                                        </div>  
+										
+										
+                                        <div class="form-group col-md-12">
                                             <label for="inputPassword5">انتشارات</label>
-                                            <select class="form-control" id="select-1">
-                                                <option>Default select</option>
-                                                <option>One</option>
-                                                <option>Two</option>
-                                                <option>Three</option>
-                                            </select></div>
+                                            <input id="inputPassword5" type="text" name="entesharat" placeholder="متال: انتشارات جنگل" class="form-control" value="{{ old('entesharat',$product->entesharat) }}" required>
+                                            	@error('entesharat')
+                                                 <span class="alert_required bg-danger text-white p-1 rounded" role="alert">
+                                                   <strong>
+                                                    {{ $message }}
+                                                   </strong>
+                                                 </span>
+                                                @enderror
+                                        </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="exampleFormControlTextarea1">توضیحات:</label>
-                                        <textarea class="form-control" id="exampleFormControlTextarea1"
-                                                  rows="3"></textarea>
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description">{{ old('description',$product->description) }}</textarea>
+												@error('description')
+                                                 <span class="alert_required bg-danger text-white p-1 rounded" role="alert">
+                                                   <strong>
+                                                    {{ $message }}
+                                                   </strong>
+                                                 </span>
+                                                @enderror
+                                    </div>
+
+                                    <div class="form-row mb-4">
+                                        <div class="form-group col-md-12">
+                                            <label for="inputEmail4">شابک</label>
+                                            <input type="number" class="form-control" id="inputEmail4" placeholder="شابک وارد کنید" name="shabak" value="{{ old('shabak',$product->shabak) }}">
+												@error('shabak',$product->shabak)
+                                                 <span class="alert_required bg-danger text-white p-1 rounded" role="alert">
+                                                   <strong>
+                                                    {{ $message }}
+                                                   </strong>
+                                                 </span>
+                                                @enderror
+                                        </div>
                                     </div>
 
                                     <div class="form-row mb-4">
                                         <div class="form-group col-md-6">
-                                            <label for="inputEmail4">صفحات</label>
-                                            <input type="number" class="form-control" id="inputEmail4"
-                                                   placeholder="عدد وارد کنید">
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="inputPassword4">سری چاپ</label>
-                                            <input type="number" class="form-control" id="inputPassword4"
-                                                   placeholder="سری چاپ">
-                                        </div>
-                                    </div>
-                                    <div class="form-row mb-4">
-                                        <div class="form-group col-md-6">
-                                            <label for="inputEmail4">شابک</label>
-                                            <input type="number" class="form-control" id="inputEmail4"
-                                                   placeholder="شابک وارد کنید">
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="inputPassword4">سری چاپ</label>
-                                            <input type="number" class="form-control" id="inputPassword4"
-                                                   placeholder="سری چاپ">
-                                        </div>
-                                    </div>
-                                    <div class="form-row mb-4">
-                                        <div class="form-group col-md-6">
                                             <label for="inputEmail4">کد کتاب</label>
-                                            <input type="number" class="form-control" id="inputEmail4"
-                                                   placeholder="کد کتاب وارد کنید">
+                                            <input type="number" class="form-control" id="inputEmail4" placeholder="کد کتاب وارد کنید" name="code_book" value="{{ old('code_book',$product->code_book) }}">
+												@error('code_book')
+                                                 <span class="alert_required bg-danger text-white p-1 rounded" role="alert">
+                                                   <strong>
+                                                    {{ $message }}
+                                                   </strong>
+                                                 </span>
+                                                @enderror
                                         </div>
+										
                                         <div class="form-group col-md-6">
                                             <label for="inputPassword4">مترجم</label>
-                                            <select class="form-control">
-                                                <option>تست یک</option>
-                                                <option>تست دو</option>
-                                                <option>تست سه</option>
-                                            </select>
+                                            <input id="inputPassword4" type="text" name="motarjem" placeholder="متال: قارپو زاده" class="form-control" value="{{ old('motarjem',$product->motarjem) }}" required>
+												@error('motarjem')
+                                                 <span class="alert_required bg-danger text-white p-1 rounded" role="alert">
+                                                   <strong>
+                                                    {{ $message }}
+                                                   </strong>
+                                                 </span>
+                                                @enderror
                                         </div>
                                     </div>
+
                                     <div class="form-row mb-4">
                                         <div class="form-group col-md-6">
                                             <label for="inputEmail4">قیمت اصلی کتاب</label>
-                                            <input type="number" class="form-control" id="inputEmail4"
-                                                   placeholder="قیمت کتاب وارد کنید">
+                                            <input type="number" class="form-control" id="inputEmail4" placeholder="قیمت کتاب وارد کنید" name="main_price" value="{{ old('main_price',$product->main_price) }}">
+												@error('main_price')
+                                                 <span class="alert_required bg-danger text-white p-1 rounded" role="alert">
+                                                   <strong>
+                                                    {{ $message }}
+                                                   </strong>
+                                                 </span>
+                                                @enderror
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="inputPassword4">قیمت کتاب با تخفیف:</label>
-                                            <input type="number" class="form-control" id="inputEmail4"
-                                                   placeholder="قیمت کتاب وارد کنید">
+                                            <input type="number" class="form-control" id="inputEmail4" placeholder="قیمت کتاب وارد کنید" name="off_price" value="{{ old('off_price',$product->off_price) }}">
+												@error('off_price')
+                                                 <span class="alert_required bg-danger text-white p-1 rounded" role="alert">
+                                                   <strong>
+                                                    {{ $message }}
+                                                   </strong>
+                                                 </span>
+                                                @enderror
                                         </div>
                                     </div>
 
                                     <div class="form-group mb-4 mt-3">
                                         <div class="custom-file mb-4">
-                                            <input type="file" class="custom-file-input" id="customFile">
-                                            <label class="custom-file-label" for="customFile">Choose file</label>
+                                            <label class="custom-file-label" for="customFile">انتخاب تصویر</label>
+                                            <input type="file" class="custom-file-input" id="customFile" name="image">
+												@error('image')
+                                                 <span class="alert_required bg-danger text-white p-1 rounded" role="alert">
+                                                   <strong>
+                                                    {{ $message }}
+                                                   </strong>
+                                                 </span>
+                                                @enderror
+													<section class="row mt-5 d-flex justify-content-center">
+                                                        <img src="{{asset($product->image) }}" alt="" width="300" height="300">
+                                                    </section>
                                         </div>
                                     </div>
+
                                     <div class="form-group">
-                                        <input type="submit" name="txt" class="mt-4 btn btn-primary">
+                                        <div class="form-row mb-4">
+                                            <div class="form-group col-md-6">
+                                                <div class="n-chk">
+                                                    <p>وضعیت انتشار</p>
+                                                    <select class="form-control" id="select-55" name="status" value="{{ old('status') }}">
+                                                        <option value="1" @if(old('status', $product->status) == 1) selected @endif>فعال</option>
+                                                        <option value="0" @if(old('status', $product->status) == 0)selected @endif>غیر فعال</option>
+                                                    </select>
+												@error('status')
+                                                 <span class="alert_required bg-danger text-white p-1 rounded" role="alert">
+                                                   <strong>
+                                                    {{ $message }}
+                                                   </strong>
+                                                 </span>
+                                                @enderror
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="inputPassword4">تعداد موجودی در انبار</label>
+                                                <input type="number" class="form-control" id="inputPassword4" placeholder="برای مثال: 222" name="inventory" value="{{ old('inventory',$product->inventory) }}">
+												@error('inventory')
+                                                 <span class="alert_required bg-danger text-white p-1 rounded" role="alert">
+                                                   <strong>
+                                                    {{ $message }}
+                                                   </strong>
+                                                 </span>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <button type="submit" class="mt-4 btn btn-primary">افزودن محصول</button>
                                     </div>
 
                                 </form>
@@ -122,14 +237,6 @@
                     <!--       end main             -->
                 </div>
 
-                <div class="row">
-
-                    <div id="form_grid_layouts" class="col-lg-12">
-                        <div class="seperator-header">
-                            <h4 class="">لیست دسته بندی ها</h4>
-                        </div>
-                    </div>
-                </div>
 
             </div>
         </div>
@@ -140,9 +247,7 @@
             </div>
             <div class="footer-section f-section-2">
                 <p class="">Coded with
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                         class="feather feather-heart">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart">
                         <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
                     </svg>
                 </p>

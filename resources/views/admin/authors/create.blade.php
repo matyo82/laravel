@@ -13,7 +13,7 @@
                             <div class="widget-header">
                                 <div class="row">
                                     <div class="col-xl-12 col-md-12 col-sm-12 col-12">
-                                        <h4>ویرایش نویسنده</h4>
+                                        <h4>افزودن نویسنده</h4>
                                     </div>
                                 </div>
                             </div>
@@ -21,22 +21,21 @@
 
                                 <div class="row">
                                     <div class="col-lg-6 col-12 mx-auto">
-                                        <form method="post" enctype="multipart/form-data" action="{{ route('nevisandeh.update', $nevisandeh) }}">
+                                        <form method="post" enctype="multipart/form-data" action="{{ route('author.store') }}">
                                             @csrf
-                                            @method('put')
                                             <div class="form-group">
                                                 <p>اسم نویسنده:</p>
                                                 <label for="t-text" class="sr-only">اسم نویسنده</label>
-                                                <input id="t-text" type="text" name="name" placeholder="راجب نویسنده توضیح دهید" class="form-control @error('name') is-invalid @enderror" value="{{ old('name') ?: $nevisandeh->name }}" required>
+                                                <input id="t-text" type="text" name="name" placeholder="Some Text..." class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}" required>
                                                 @error('inventory')
                                                     <div class="alert alert-danger mt-1">{{ $message }}</div>
                                                 @enderror
 
                                             </div>
-
+                                            
                                             <div class="form-group">
-                                                <label for="bio">توضیحات:</label>
-                                                <textarea name="bio" class="form-control @error('bio') is-invalid @enderror" id="bio" rows="3" autocomplete="off">{{ old('bio') ?: $nevisandeh->bio }}</textarea>
+                                                <label for="exampleFormControlTextarea1">توضیحات:</label>
+                                                <textarea name="bio" class="form-control @error('bio') is-invalid @enderror" id="exampleFormControlTextarea1" rows="3" value="{{ old('bio') }}"></textarea>
 
                                                 @error('bio')
                                                     <div class="alert alert-danger mt-1">{{ $message }}</div>
@@ -50,14 +49,11 @@
                                                     @error('image')
                                                         <div class="alert alert-danger mt-4">{{ $message }}</div>
                                                     @enderror
-                                                    <section class="row mt-5 d-flex justify-content-center">
-                                                        <img src="{{ Illuminate\Support\Facades\Storage::Url($nevisandeh->image) }}" alt="" width="300" height="300">
-                                                    </section>
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
-                                                <button type="submit" class="mt-4 btn btn-primary">ویرایش نویسنده</button>
+                                                <button type="submit" class="mt-4 btn btn-primary">افزودن نویسنده</button>
                                             </div>
 
                                         </form>

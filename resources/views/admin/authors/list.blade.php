@@ -19,7 +19,7 @@
                                 </div>
                                 <div class="widget-content widget-content-area">
                                     <div class="form-group d-flex justify-content-end">
-                                        <a href="{{ route('nevisandeh.create') }}" class="btn btn-success">ایجاد</a>
+                                        <a href="{{ route('author.create') }}" class="btn btn-success">ایجاد</a>
                                     </div>
                                     <div class="table-responsive">
                                         <table class="table table-bordered table-striped mb-4">
@@ -32,21 +32,21 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach ($users as $user)
+                                                @foreach ($authors as $author)
                                                     <tr>
                                                         <td>
                                                             <div class="d-flex">
-                                                                <p style="padding-right: 15px " class="align-self-center mb-0">{{ $user->name }}</p>
+                                                                <p style="padding-right: 15px " class="align-self-center mb-0">{{ $author->name }}</p>
                                                             </div>
                                                         </td>
                                                         <td class="d-flex justify-content-center ">
-                                                            <img width="150" height="90" src="{{ Illuminate\Support\Facades\Storage::Url($nevisandeh->image) }}">
+                                                            <img width="150" height="90" src="{{ asset($author->image) }}">
                                                         </td>
-                                                        <td>{{ $user->created_at }}</td>
+                                                        <td>{{ $author->created_at }}</td>
                                                         <td class=" text-center">
                                                             <div class="form-group">
-                                                                <a href="{{ route('nevisandeh.edit', $user) }}" class="mt-4 btn btn-primary">ویرایش</a>
-                                                                <form class="d-inline" action="{{ route('nevisandeh.destroy', $user) }}" method="post">
+                                                                <a href="{{ route('author.edit', $author) }}" class="mt-4 btn btn-primary">ویرایش</a>
+                                                                <form class="d-inline" action="{{ route('author.destroy', $author) }}" method="post">
                                                                     @csrf
                                                                     {{ method_field('delete') }}
                                                                     <button class="mt-4 btn btn-danger"type="submit"><i class="fa fa-trash-alt"></i> حذف</button>

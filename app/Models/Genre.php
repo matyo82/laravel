@@ -4,14 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Product;
 
-class Nevisandeh extends Model
+
+class Genre extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'bio','image'];
+    protected $fillable = ['name','description','status'];
 
     public function products()
     {
           return $this->hasMany(Product::class);
-    }
+    }	
 }

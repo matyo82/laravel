@@ -30,92 +30,163 @@
                                     <div class="form-group">
                                         <p>اسم کتاب:</p>
                                         <label for="t-text1" class="sr-only">اسم کتاب</label>
-                                        <input id="t-text1" type="text" name="name_book" placeholder="Some Text..." class="form-control @error('name_book') is-invalid @enderror" value="{{ old('name_book') }}" required>
-                                        @error('name_book')
-                                            <div class="alert alert-danger mt-1">{{ $message }}</div>
-                                        @enderror
+                                        <input id="t-text1" type="text" name="name_book" placeholder="Some Text..." class="form-control" value="{{ old('name_book') }}" required>
+												@error('name_book')
+                                                 <span class="alert_required bg-danger text-white p-1 rounded" role="alert">
+                                                   <strong>
+                                                    {{ $message }}
+                                                   </strong>
+                                                 </span>
+                                                @enderror
                                     </div>
 
                                     <div class="form-row mb-4">
                                         <div class="form-group col-md-6">
                                             <label for="select-55">نویسنده</label>
-                                            <select class="form-control @error('nevisande_id') is-invalid @enderror" id="select-55" name="nevisande_id" value="{{ old('nevisande_id') }}">
-                                                @foreach ($nevisandeh as $item)
-                                                    <option value="{{ $item[0]->id }}">{{ $item[0]->name }}</option>
+                                            <select class="form-control" id="select-55" name="author_id" value="{{ old('author_id') }}">
+                                                @foreach ($authors as $author)
+                                                    <option value="{{ $author->id }}">{{$author->name }}</option>
                                                 @endforeach
                                             </select>
-                                            @error('nevisande_id')
-                                                <div class="alert alert-danger mt-1">{{ $message }}</div>
-                                            @enderror
+												@error('author_id')
+                                                 <span class="alert_required bg-danger text-white p-1 rounded" role="alert">
+                                                   <strong>
+                                                    {{ $message }}
+                                                   </strong>
+                                                 </span>
+                                                @enderror
                                         </div>
+										
                                         <div class="form-group col-md-6">
-                                            <label for="inputPassword5">انتشارات</label>
-                                            <input id="inputPassword5" type="text" name="entesharat" placeholder="متال: انتشارات جنگل" class="form-control  @error('entesharat') is-invalid @enderror" value="{{ old('entesharat') }}" required>
-                                            @error('entesharat')
+                                            <label for="select-55">ژانر</label>
+                                            <select class="form-control" id="select-55" name="genre_id" value="{{ old('genre_id') }}">
+                                                @foreach ($genres as $genre)
+                                                    <option value="{{ $genre->id }}">{{$genre->name }}</option>
+                                                @endforeach
+                                            </select>
+												@error('genre_id')
+                                                 <span class="alert_required bg-danger text-white p-1 rounded" role="alert">
+                                                   <strong>
+                                                    {{ $message }}
+                                                   </strong>
+                                                 </span>
+                                                @enderror
+                                        </div>  
+										
+										<div class="form-group col-md-12">
+                                            <label for="select-55">رده سنی</label>
+                                            <select class="form-control" id="select-55" name="age_id" value="{{ old('age_id') }}">
+                                                @foreach ($ages as $age)
+                                                    <option value="{{ $age->id }}">{{$age->name }}</option>
+                                                @endforeach
+                                            </select>
+                                            @error('age_id')
                                                 <div class="alert alert-danger mt-1">{{ $message }}</div>
                                             @enderror
+                                        </div>  
+										
+										
+                                        <div class="form-group col-md-12">
+                                            <label for="inputPassword5">انتشارات</label>
+                                            <input id="inputPassword5" type="text" name="entesharat" placeholder="متال: انتشارات جنگل" class="form-control" value="{{ old('entesharat') }}" required>
+                                            	@error('entesharat')
+                                                 <span class="alert_required bg-danger text-white p-1 rounded" role="alert">
+                                                   <strong>
+                                                    {{ $message }}
+                                                   </strong>
+                                                 </span>
+                                                @enderror
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="exampleFormControlTextarea1">توضیحات:</label>
-                                        <textarea class="form-control @error('description') is-invalid @enderror" id="exampleFormControlTextarea1" value="{{ old('description') }}" rows="3" name="description"></textarea>
-                                        @error('description')
-                                            <div class="alert alert-danger mt-1">{{ $message }}</div>
-                                        @enderror
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description">{{ old('description') }}</textarea>
+												@error('description')
+                                                 <span class="alert_required bg-danger text-white p-1 rounded" role="alert">
+                                                   <strong>
+                                                    {{ $message }}
+                                                   </strong>
+                                                 </span>
+                                                @enderror
                                     </div>
 
                                     <div class="form-row mb-4">
                                         <div class="form-group col-md-12">
                                             <label for="inputEmail4">شابک</label>
-                                            <input type="number" class="form-control @error('shabak') is-invalid @enderror" id="inputEmail4" placeholder="شابک وارد کنید" name="shabak" value="{{ old('shabak') }}">
-                                            @error('shabak')
-                                                <div class="alert alert-danger mt-1">{{ $message }}</div>
-                                            @enderror
+                                            <input type="number" class="form-control" id="inputEmail4" placeholder="شابک وارد کنید" name="shabak" value="{{ old('shabak') }}">
+												@error('shabak')
+                                                 <span class="alert_required bg-danger text-white p-1 rounded" role="alert">
+                                                   <strong>
+                                                    {{ $message }}
+                                                   </strong>
+                                                 </span>
+                                                @enderror
                                         </div>
                                     </div>
 
                                     <div class="form-row mb-4">
                                         <div class="form-group col-md-6">
                                             <label for="inputEmail4">کد کتاب</label>
-                                            <input type="number" class="form-control @error('code_book') is-invalid @enderror" id="inputEmail4" placeholder="کد کتاب وارد کنید" name="code_book" value="{{ old('code_book') }}">
-                                            @error('code-book')
-                                                <div class="alert alert-danger mt-1">{{ $message }}</div>
-                                            @enderror
+                                            <input type="number" class="form-control" id="inputEmail4" placeholder="کد کتاب وارد کنید" name="code_book" value="{{ old('code_book') }}">
+												@error('code_book')
+                                                 <span class="alert_required bg-danger text-white p-1 rounded" role="alert">
+                                                   <strong>
+                                                    {{ $message }}
+                                                   </strong>
+                                                 </span>
+                                                @enderror
                                         </div>
+										
                                         <div class="form-group col-md-6">
                                             <label for="inputPassword4">مترجم</label>
-                                            <input id="inputPassword4" type="text" name="motarjem" placeholder="متال: قارپو زاده" class="form-control @error('motarjem') is-invalid @enderror" value="{{ old('motarjem') }}" required>
-                                            @error('motarjem')
-                                                <div class="alert alert-danger mt-1">{{ $message }}</div>
-                                            @enderror
+                                            <input id="inputPassword4" type="text" name="motarjem" placeholder="متال: قارپو زاده" class="form-control" value="{{ old('motarjem') }}" required>
+												@error('motarjem')
+                                                 <span class="alert_required bg-danger text-white p-1 rounded" role="alert">
+                                                   <strong>
+                                                    {{ $message }}
+                                                   </strong>
+                                                 </span>
+                                                @enderror
                                         </div>
                                     </div>
 
                                     <div class="form-row mb-4">
                                         <div class="form-group col-md-6">
                                             <label for="inputEmail4">قیمت اصلی کتاب</label>
-                                            <input type="number" class="form-control @error('main_price') is-invalid @enderror" id="inputEmail4" placeholder="قیمت کتاب وارد کنید" name="main_price" value="{{ old('main_price') }}">
-                                            @error('main_price')
-                                                <div class="alert alert-danger mt-1">{{ $message }}</div>
-                                            @enderror
+                                            <input type="number" class="form-control" id="inputEmail4" placeholder="قیمت کتاب وارد کنید" name="main_price" value="{{ old('main_price') }}">
+												@error('main_price')
+                                                 <span class="alert_required bg-danger text-white p-1 rounded" role="alert">
+                                                   <strong>
+                                                    {{ $message }}
+                                                   </strong>
+                                                 </span>
+                                                @enderror
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="inputPassword4">قیمت کتاب با تخفیف:</label>
-                                            <input type="number" class="form-control @error('off_price') is-invalid @enderror" id="inputEmail4" placeholder="قیمت کتاب وارد کنید" name="off_price" value="{{ old('off_price') }}">
-                                            @error('off_price')
-                                                <div class="alert alert-danger mt-1">{{ $message }}</div>
-                                            @enderror
+                                            <input type="number" class="form-control" id="inputEmail4" placeholder="قیمت کتاب وارد کنید" name="off_price" value="{{ old('off_price') }}">
+												@error('off_price')
+                                                 <span class="alert_required bg-danger text-white p-1 rounded" role="alert">
+                                                   <strong>
+                                                    {{ $message }}
+                                                   </strong>
+                                                 </span>
+                                                @enderror
                                         </div>
                                     </div>
 
                                     <div class="form-group mb-4 mt-3">
                                         <div class="custom-file mb-4">
-                                            <label class="custom-file-label @error('image') is-invalid @enderror" for="customFile">انتخاب تصویر</label>
+                                            <label class="custom-file-label" for="customFile">انتخاب تصویر</label>
                                             <input type="file" class="custom-file-input" id="customFile" name="image">
-                                            @error('image')
-                                                <div class="alert alert-danger mt-4">{{ $message }}</div>
-                                            @enderror
+												@error('image')
+                                                 <span class="alert_required bg-danger text-white p-1 rounded" role="alert">
+                                                   <strong>
+                                                    {{ $message }}
+                                                   </strong>
+                                                 </span>
+                                                @enderror
                                         </div>
                                     </div>
 
@@ -124,20 +195,28 @@
                                             <div class="form-group col-md-6">
                                                 <div class="n-chk">
                                                     <p>وضعیت انتشار</p>
-                                                    <select class="form-control @error('status') is-invalid @enderror" id="select-55" name="status" value="{{ old('status') }}">
-                                                        <option value="active">فعال</option>
-                                                        <option value="disabled">غیر فعال</option>
+                                                    <select class="form-control" id="select-55" name="status" value="{{ old('status') }}">
+                                                        <option value="1">فعال</option>
+                                                        <option value="0">غیر فعال</option>
                                                     </select>
-                                                    @error('status')
-                                                        <div class="alert alert-danger mt-1">{{ $message }}</div>
-                                                    @enderror
+												@error('status')
+                                                 <span class="alert_required bg-danger text-white p-1 rounded" role="alert">
+                                                   <strong>
+                                                    {{ $message }}
+                                                   </strong>
+                                                 </span>
+                                                @enderror
                                                 </div>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="inputPassword4">تعداد موجودی در انبار</label>
-                                                <input type="number" class="form-control @error('inventory') is-invalid @enderror" id="inputPassword4" placeholder="برای مثال: 222" name="inventory" value="{{ old('inventory') }}">
-                                                @error('inventory')
-                                                    <div class="alert alert-danger mt-1">{{ $message }}</div>
+                                                <input type="number" class="form-control" id="inputPassword4" placeholder="برای مثال: 222" name="inventory" value="{{ old('inventory') }}">
+												@error('inventory')
+                                                 <span class="alert_required bg-danger text-white p-1 rounded" role="alert">
+                                                   <strong>
+                                                    {{ $message }}
+                                                   </strong>
+                                                 </span>
                                                 @enderror
                                             </div>
                                         </div>
@@ -154,14 +233,6 @@
                     <!--       end main             -->
                 </div>
 
-                <div class="row">
-
-                    <div id="form_grid_layouts" class="col-lg-12">
-                        <div class="seperator-header">
-                            <h4 class="">لیست دسته بندی ها</h4>
-                        </div>
-                    </div>
-                </div>
 
             </div>
         </div>
