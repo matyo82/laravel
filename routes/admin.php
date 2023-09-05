@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('admin')->prefix('')->group(function () {
     Route::get('/', function () {
+		
         return view('admin.index');
     })->name('admin.home');
     Route::resource('/users', UserController::class);
