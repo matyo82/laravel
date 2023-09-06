@@ -1,8 +1,8 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminUserController;
-use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\Admin\CategoryChildrenController;
+//use App\Http\Controllers\Admin\CategoryController;
+//use App\Http\Controllers\Admin\CategoryChildrenController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\AuthorController;
 use App\Http\Controllers\Admin\BookRequestController;
@@ -29,7 +29,7 @@ Route::middleware('admin')->prefix('')->group(function () {
     Route::resource('/admins', AdminUserController::class);
     Route::resource('/product', ProductController::class);
     //Route::resource('/category', CategoryController::class);
-    Route::resource('/category-childs', CategoryChildrenController::class);
+    //Route::resource('/category-childs', CategoryChildrenController::class);
     Route::resource('/author', AuthorController::class);
     Route::resource('/book-request', BookRequestController::class);
     Route::get('/user/profile', function () {
