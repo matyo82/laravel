@@ -12,7 +12,7 @@
     <div class="banner-area pt-100 pb-100">
         <div class="container">
             <div class="bg-img pt-100 pb-100 learn-banner"
-                 style="background-image:url({{asset('front-assets/images/bg/banner-bg-1.jpg')}});">
+                style="background-image:url({{ asset('front-assets/images/bg/banner-bg-1.jpg') }});">
                 <div class="row">
                     <div class="col-lg-10 col-md-10 col-sm-11">
                         <div class="banner-content">
@@ -34,7 +34,8 @@
             <div class="product-slider-active owl-carousel">
                 <div class="product-wrap">
                     <div class="product-img mb-15">
-                        <a href="product-details.html"><img src="{{asset('front-assets/images/product/pro-hm1-1.jpg')}}" alt="product"></a>
+                        <a href="product-details.html"><img src="{{ asset('front-assets/images/product/pro-hm1-1.jpg') }}"
+                                alt="product"></a>
                         <div class="product-action">
                             <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i
                                     class="la la-plus"></i></a>
@@ -57,7 +58,8 @@
                 </div>
                 <div class="product-wrap">
                     <div class="product-img mb-15">
-                        <a href="product-details.html"><img src="{{asset('front-assets/images/product/pro-hm1-2.jpg')}}" alt="product"></a>
+                        <a href="product-details.html"><img src="{{ asset('front-assets/images/product/pro-hm1-2.jpg') }}"
+                                alt="product"></a>
                         <span class="price-dec">-30%</span>
                         <div class="product-action">
                             <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i
@@ -82,7 +84,8 @@
                 </div>
                 <div class="product-wrap">
                     <div class="product-img mb-15">
-                        <a href="product-details.html"><img src="{{asset('front-assets/images/product/pro-hm1-3.jpg')}}" alt="product"></a>
+                        <a href="product-details.html"><img src="{{ asset('front-assets/images/product/pro-hm1-3.jpg') }}"
+                                alt="product"></a>
                         <span class="new-stock"><span>Stock <br>Out</span></span>
                         <div class="product-action">
                             <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i
@@ -106,7 +109,8 @@
                 </div>
                 <div class="product-wrap">
                     <div class="product-img mb-15">
-                        <a href="product-details.html"><img src="{{asset('front-assets/images/product/pro-hm1-4.jpg')}}" alt="product"></a>
+                        <a href="product-details.html"><img src="{{ asset('front-assets/images/product/pro-hm1-4.jpg') }}"
+                                alt="product"></a>
                         <span class="price-dec font-dec">NEW</span>
                         <div class="product-action">
                             <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i
@@ -131,7 +135,8 @@
                 </div>
                 <div class="product-wrap">
                     <div class="product-img mb-15">
-                        <a href="product-details.html"><img src="{{asset('front-assets/images/product/pro-hm1-2.jpg')}}"  alt="product"></a>
+                        <a href="product-details.html"><img src="{{ asset('front-assets/images/product/pro-hm1-2.jpg') }}"
+                                alt="product"></a>
                         <span class="price-dec">-30%</span>
                         <div class="product-action">
                             <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i
@@ -163,7 +168,7 @@
                 <div class="col-lg-7 col-md-6">
                     <div class="discount-img">
                         <a href="#">
-                            <img src="{{asset('front-assets/images/banner/banner-1.jpg')}}" alt="discount-img">
+                            <img src="{{ asset('front-assets/images/banner/banner-1.jpg') }}" alt="discount-img">
                         </a>
                     </div>
                 </div>
@@ -193,7 +198,8 @@
                 <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
                     <div class="product-wrap mb-35">
                         <div class="product-img mb-15">
-                            <a href="product-details.html"><img src="{{asset('front-assets/images/product/pro-hm1-1.jpg')}}" alt="product"></a>
+                            <a href="product-details.html"><img
+                                    src="{{ asset('front-assets/images/product/pro-hm1-1.jpg') }}" alt="product"></a>
                             <div class="product-action">
                                 <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i
                                         class="la la-plus"></i></a>
@@ -218,7 +224,8 @@
                 <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
                     <div class="product-wrap mb-35">
                         <div class="product-img mb-15">
-                            <a href="product-details.html"><img src="{{asset('front-assets/images/product/pro-hm1-2.jpg')}}"alt="product"></a>
+                            <a href="product-details.html"><img
+                                    src="{{ asset('front-assets/images/product/pro-hm1-2.jpg') }}"alt="product"></a>
                             <span class="price-dec">-30%</span>
                             <div class="product-action">
                                 <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i
@@ -245,7 +252,8 @@
                 <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
                     <div class="product-wrap mb-35">
                         <div class="product-img mb-15">
-                            <a href="product-details.html"><img src="{{asset('front-assets/images/product/pro-hm1-3.jpg')}}" alt="product"></a>
+                            <a href="product-details.html"><img
+                                    src="{{ asset('front-assets/images/product/pro-hm1-3.jpg') }}" alt="product"></a>
                             <div class="product-action">
                                 <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i
                                         class="la la-plus"></i></a>
@@ -270,7 +278,8 @@
                 <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
                     <div class="product-wrap mb-35">
                         <div class="product-img mb-15">
-                            <a href="product-details.html"><img src="{{asset('front-assets/images/product/pro-hm1-4.jpg')}}" alt="product"></a>
+                            <a href="product-details.html"><img
+                                    src="{{ asset('front-assets/images/product/pro-hm1-4.jpg') }}" alt="product"></a>
                             <span class="price-dec font-dec">NEW</span>
                             <div class="product-action">
                                 <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i
@@ -296,7 +305,8 @@
                 <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
                     <div class="product-wrap mb-35">
                         <div class="product-img mb-15">
-                            <a href="product-details.html"><img src="{{asset('front-assets/images/product/pro-hm1-5.jpg')}}" alt="product"></a>
+                            <a href="product-details.html"><img
+                                    src="{{ asset('front-assets/images/product/pro-hm1-5.jpg') }}" alt="product"></a>
                             <span class="new-stock"><span>Stock <br>Out</span></span>
                             <div class="product-action">
                                 <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i
@@ -323,7 +333,8 @@
                 <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
                     <div class="product-wrap mb-35">
                         <div class="product-img mb-15">
-                            <a href="product-details.html"><img src="{{asset('front-assets/images/product/pro-hm1-6.jpg')}}" alt="product"></a>
+                            <a href="product-details.html"><img
+                                    src="{{ asset('front-assets/images/product/pro-hm1-6.jpg') }}" alt="product"></a>
                             <div class="product-action">
                                 <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i
                                         class="la la-plus"></i></a>
@@ -348,7 +359,8 @@
                 <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
                     <div class="product-wrap mb-35">
                         <div class="product-img mb-15">
-                            <a href="product-details.html"><img src="{{asset('front-assets/images/product/pro-hm1-7.jpg')}}" alt="product"></a>
+                            <a href="product-details.html"><img
+                                    src="{{ asset('front-assets/images/product/pro-hm1-7.jpg') }}" alt="product"></a>
                             <span class="price-dec font-dec">NEW</span>
                             <div class="product-action">
                                 <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i
@@ -375,7 +387,8 @@
                 <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
                     <div class="product-wrap mb-35">
                         <div class="product-img mb-15">
-                            <a href="product-details.html"><img src="{{asset('front-assets/images/product/pro-hm1-8.jpg')}}"alt="product"></a>
+                            <a href="product-details.html"><img
+                                    src="{{ asset('front-assets/images/product/pro-hm1-8.jpg') }}"alt="product"></a>
                             <div class="product-action">
                                 <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i
                                         class="la la-plus"></i></a>
@@ -400,8 +413,4 @@
             </div>
         </div>
     </div>
-
 @endsection
-
-
-
