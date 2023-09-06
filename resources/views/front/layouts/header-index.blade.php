@@ -4,7 +4,8 @@
                 <div class="row">
                     <div class="col-xl-3 col-lg-3">
                         <div class="logo mt-40">
-                            <a href="index.html"><img src="{{asset('front-assets/images/logo/logo-1.png')}}" alt="logo"></a>
+                            <a href="index.html"><img src="{{ asset('front-assets/images/logo/logo-1.png') }}"
+                                    alt="logo"></a>
                         </div>
                     </div>
                     <div class="col-xl-7 col-lg-6">
@@ -12,7 +13,7 @@
                             <nav>
                                 <ul>
                                     <li class="angle-shape">
-                                        <a href="index.html">Home</a>
+                                        <a href="loogout">loogout</a>
                                     </li>
                                     <li class="angle-shape">
                                         <a href="shop.html">Shop </a>
@@ -46,7 +47,7 @@
                         <div class="header-right-wrap mt-40">
 
                             <div class="cart-wrap common-style">
-							   <button class="cart-active">
+                                <button class="cart-active">
                                     <i class="la la-shopping-cart"></i>
                                     <span class="count-style">2 Items</span>
                                 </button>
@@ -58,7 +59,8 @@
                                     <ul>
                                         <li class="single-shopping-cart">
                                             <div class="shopping-cart-img">
-                                                <a href="#"><img alt="" src="({{asset('front-assets/images/cart/cart-1.jpg')}}"></a>
+                                                <a href="#"><img alt=""
+                                                        src="({{ asset('front-assets/images/cart/cart-1.jpg') }}"></a>
                                                 <div class="item-close">
                                                     <a href="#"><i class="sli sli-close"></i></a>
                                                 </div>
@@ -73,7 +75,8 @@
                                         </li>
                                         <li class="single-shopping-cart">
                                             <div class="shopping-cart-img">
-                                                <a href="#"><img alt="" src="{{asset('front-assets/images/cart/cart-2.jpg')}}"></a>
+                                                <a href="#"><img alt=""
+                                                        src="{{ asset('front-assets/images/cart/cart-2.jpg') }}"></a>
                                                 <div class="item-close">
                                                     <a href="#"><i class="sli sli-close"></i></a>
                                                 </div>
@@ -88,7 +91,8 @@
                                         </li>
                                         <li class="single-shopping-cart">
                                             <div class="shopping-cart-img">
-                                                <a href="#"><img alt="" src="assets/images/cart/cart-3.jpg"></a>
+                                                <a href="#"><img alt=""
+                                                        src="assets/images/cart/cart-3.jpg"></a>
                                                 <div class="item-close">
                                                     <a href="#"><i class="sli sli-close"></i></a>
                                                 </div>
@@ -112,15 +116,15 @@
                                     </div>
                                 </div>
                             </div>
-							
+
 
                             <div class="search-wrap common-style ml-25">
                                 <button class="search-active">
                                     <i class="la la-search"></i>
                                 </button>
                             </div>
-							
-							
+
+
                         </div>
                     </div>
                 </div>
@@ -133,7 +137,8 @@
                 <div class="sidebar-search-input">
                     <form>
                         <div class="form-search">
-                            <input id="search" class="input-text" value="" placeholder="Search Now" type="search">
+                            <input id="search" class="input-text" value="" placeholder="Search Now"
+                                type="search">
                             <button>
                                 <i class="la la-search"></i>
                             </button>
@@ -169,7 +174,8 @@
                                     <ul>
                                         <li class="single-shopping-cart">
                                             <div class="shopping-cart-img">
-                                                <a href="#"><img alt="" src="assets/images/cart/cart-1.jpg"></a>
+                                                <a href="#"><img alt=""
+                                                        src="assets/images/cart/cart-1.jpg"></a>
                                                 <div class="item-close">
                                                     <a href="#"><i class="sli sli-close"></i></a>
                                                 </div>
@@ -184,7 +190,8 @@
                                         </li>
                                         <li class="single-shopping-cart">
                                             <div class="shopping-cart-img">
-                                                <a href="#"><img alt="" src="assets/images/cart/cart-2.jpg"></a>
+                                                <a href="#"><img alt=""
+                                                        src="assets/images/cart/cart-2.jpg"></a>
                                                 <div class="item-close">
                                                     <a href="#"><i class="sli sli-close"></i></a>
                                                 </div>
@@ -199,7 +206,8 @@
                                         </li>
                                         <li class="single-shopping-cart">
                                             <div class="shopping-cart-img">
-                                                <a href="#"><img alt="" src="assets/images/cart/cart-3.jpg"></a>
+                                                <a href="#"><img alt=""
+                                                        src="assets/images/cart/cart-3.jpg"></a>
                                                 <div class="item-close">
                                                     <a href="#"><i class="sli sli-close"></i></a>
                                                 </div>
