@@ -22,8 +22,11 @@ Route::get('shop', [\App\Http\Controllers\front\Shop::class, 'index']);
 
 Auth::routes();
 
+Route::get('/check', [\App\Http\Controllers\Admin\CheckController::class, 'check'])->name('check.check');
 
-
+Route::get('/dashboard/user', function () {
+    return "Dashboard";
+})->name('user.dashboard');
 
 /////////////////////////////////// Test
 Route::get('test', function () {
