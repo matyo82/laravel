@@ -32,7 +32,8 @@ Route::middleware('admin')->prefix('')->group(function () {
     //Route::resource('/category-childs', CategoryChildrenController::class);
     Route::resource('/author', AuthorController::class);
     Route::resource('/book-request', BookRequestController::class);
-    Route::get('/user/profile', function () {
+    
+	Route::get('/user/profile', function () {
         // Uses first & second middleware...
     });
 });
