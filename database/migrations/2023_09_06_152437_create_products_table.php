@@ -19,7 +19,7 @@ return new class extends Migration
                               $table->text('description')->nullable();
                               $table->string('shabak')->nullable();
 							  $table->foreignId('genre_id')->constrained('genres');
-							  $table->foreignId('age_id')->constrained('agea');
+							  $table->foreignId('age_id')->constrained('ages');
                               $table->string('code_book')->index();
                               $table->string('motarjem')->nullable();
                               $table->bigInteger('main_price');

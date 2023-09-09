@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\AuthorController;
 use App\Http\Controllers\Admin\BookRequestController;
 use App\Http\Controllers\Admin\UserController;
+//use App\Http\Controllers\Admin\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('admin')->prefix('')->group(function () {
     Route::get('/', function () {
-		
+
         return view('admin.index');
     })->name('admin.home');
     Route::resource('/users', UserController::class);
@@ -32,8 +33,10 @@ Route::middleware('admin')->prefix('')->group(function () {
     //Route::resource('/category-childs', CategoryChildrenController::class);
     Route::resource('/author', AuthorController::class);
     Route::resource('/book-request', BookRequestController::class);
-    
+
 	Route::get('/user/profile', function () {
         // Uses first & second middleware...
     });
 });
+
+\Illuminate\Support\Facades\Auth::routes();
