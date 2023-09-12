@@ -11,7 +11,7 @@
                     <div class="widget-header">
                         <div class="row">
                             <div class="col-xl-12 col-md-12 col-sm-12 col-12">
-                                <h4>فاکتور خرید شما</h4>
+                                <h4>فاکتور خرید شما برای سفارش با کد {{$order->id}}</h4>
                             </div>
                         </div>
                     </div>
@@ -59,7 +59,35 @@
 								 <tr class="border-bottom">
                                     <th class="text-left text-white font-weight-bolder">ادرس</th>
                                     <td class="text-left text-white font-weight-bolder">
-                                    -
+                                    {{$order->address->address}}
+                                    </td>
+                                 </tr>
+								 
+								 <tr class="border-bottom">
+                                    <th class="text-left text-white font-weight-bolder">پلاک</th>
+                                    <td class="text-left text-white font-weight-bolder">
+                                    {{$order->address->no}}
+                                    </td>
+                                 </tr>
+								 
+								 <tr class="border-bottom">
+                                    <th class="text-left text-white font-weight-bolder">واحد</th>
+                                    <td class="text-left text-white font-weight-bolder">
+                                    {{$order->address->unit}}
+                                    </td>
+                                 </tr>
+								 
+								 <tr class="border-bottom">
+                                    <th class="text-left text-white font-weight-bolder">نام تحویل گیرنده
+                                    <td class="text-left text-white font-weight-bolder">
+							        {{$order->address->recipient_first_name}}
+                                    </td>
+                                 </tr>
+								 
+								 <tr class="border-bottom">
+                                    <th class="text-left text-white font-weight-bolder">نام خانوادگی تحویل گیرنده</th>
+                                    <td class="text-left text-white font-weight-bolder">
+                                    {{$order->address->recipient_last_name}}
                                     </td>
                                  </tr>
 								 

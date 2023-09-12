@@ -69,7 +69,7 @@
                                                     </td>
                                                     <td>
                                                         <div class="d-flex">
-                                                            <p class="align-self-center mb-0">{{$order->status?? '-'}}</p>
+                                                            <p class="align-self-center mb-0">{{$order->orderStatusValue}}</p>
                                                         </div>
                                                     </td>
                                                     <td>
@@ -77,7 +77,7 @@
                                                             <a href="{{route('orders.show-factor',$order)}}"
                                                                class="mt-4 btn btn-success">مشاهده فاکتور
 															</a> 
-															<a href="#"
+															<a href="{{route('orders.change.status',$order)}}"
                                                                class="mt-4 btn btn-primary">تغییر وضعیت
 															</a>
                                                        
