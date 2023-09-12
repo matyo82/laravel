@@ -22,7 +22,7 @@
                                       {{ session()->get('product-generated') }}
                                   </div>
                               @endif
-                              
+
                         <div class="row">
                             <div class="col-lg-6 col-12 mx-auto">
                                 <form method="post" enctype="multipart/form-data" action="{{ route('product.store') }}">
@@ -56,7 +56,7 @@
                                                  </span>
                                                 @enderror
                                         </div>
-										
+
                                         <div class="form-group col-md-6">
                                             <label for="select-55">ژانر</label>
                                             <select class="form-control" id="select-55" name="genre_id" value="{{ old('genre_id') }}">
@@ -71,8 +71,8 @@
                                                    </strong>
                                                  </span>
                                                 @enderror
-                                        </div>  
-										
+                                        </div>
+
 										<div class="form-group col-md-12">
                                             <label for="select-55">رده سنی</label>
                                             <select class="form-control" id="select-55" name="age_id" value="{{ old('age_id') }}">
@@ -83,9 +83,9 @@
                                             @error('age_id')
                                                 <div class="alert alert-danger mt-1">{{ $message }}</div>
                                             @enderror
-                                        </div>  
-										
-										
+                                        </div>
+
+
                                         <div class="form-group col-md-12">
                                             <label for="inputPassword5">انتشارات</label>
                                             <input id="inputPassword5" type="text" name="entesharat" placeholder="متال: انتشارات جنگل" class="form-control" value="{{ old('entesharat') }}" required>
@@ -137,7 +137,7 @@
                                                  </span>
                                                 @enderror
                                         </div>
-										
+
                                         <div class="form-group col-md-6">
                                             <label for="inputPassword4">مترجم</label>
                                             <input id="inputPassword4" type="text" name="motarjem" placeholder="متال: قارپو زاده" class="form-control" value="{{ old('motarjem') }}" required>
