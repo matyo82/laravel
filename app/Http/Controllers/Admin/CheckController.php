@@ -12,20 +12,20 @@ class CheckController extends Controller
         if (auth()->user()) {
             switch (auth()->user()->user_type) {
                 case 0:
-                    return redirect(route("user.dashboard"));
+                    return redirect(route('front.home'));
                     break;
                 case 1:
-                    return redirect(route("admin.home"));
+                    return redirect(route('admin.home'));
                     break;
                 case 2:
-                    return redirect(route("admin.home"));
+                    return redirect(route('admin.home'));
                     break;
                 default:
-                    return redirect(route("front.home"));
+                    return redirect(route('front.index'));
                     break;
             }
         } else {
-            abort(404);
+            abort(403);
         }
     }
 }

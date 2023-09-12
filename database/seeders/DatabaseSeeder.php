@@ -10,6 +10,8 @@ use Database\Seeders\AuthorSeeder;
 use Database\Seeders\ProductSeeder;
 use Database\Seeders\AgeSeeder;
 use Database\Seeders\GenreSeeder;
+use Database\Seeders\OrderSeeder;
+use Database\Seeders\OrderItemSeeder;
 use Illuminate\Support\Facades\Schema;
 
 
@@ -27,6 +29,8 @@ class DatabaseSeeder extends Seeder
 		             $this->call(GenreSeeder::class);
 		             $this->call(ProductSeeder::class);
 		             $this->call(AuthorSeeder::class);
+		             $this->call(OrderSeeder::class);
+		             $this->call(OrderItemSeeder::class);
                      Schema::enableForeignKeyConstraints();
           }
 }

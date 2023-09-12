@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\AuthorController;
 use App\Http\Controllers\Admin\BookRequestController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\OrderController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,11 +21,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('admin')->prefix('')->group(function () {
-    Route::get('/', function () {
-		
-        return view('admin.index');
-    })->name('admin.home');
+Route::middleware('admin')->group(function () {
+    Route::get('/',[\App\Http\Controllers\Admin\HomeController::class,'index'])->name('admin.home');
     Route::resource('/users', UserController::class);
     Route::resource('/admins', AdminUserController::class);
     Route::resource('/product', ProductController::class);
@@ -32,6 +30,9 @@ Route::middleware('admin')->prefix('')->group(function () {
     //Route::resource('/category-childs', CategoryChildrenController::class);
     Route::resource('/author', AuthorController::class);
     Route::resource('/book-request', BookRequestController::class);
+    Route::resource('/orders',OrderController::class);
+	Route::get('order/{order}/show-factor',[OrderController::class,'showFactor'])->name('orders.show-factor');
+	Route::get('order/{order}/show-factor/details',[OrderController::class,'details'])->name('orders.show-factor.details');
     
 	Route::get('/user/profile', function () {
         // Uses first & second middleware...

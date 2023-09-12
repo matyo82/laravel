@@ -20,6 +20,7 @@ class AuthorController extends Controller
     {
         $authors = Author::orderBy('id', 'desc')->get();
         return view('admin.authors.list', compact('authors'));
+
     }
 
     /**

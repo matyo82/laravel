@@ -19,7 +19,7 @@ class CheckAdmin
             if (auth()->user()->user_type == 1 || auth()->user()->user_type == 2) {
                 return $next($request);
             } elseif (auth()->user()->user_type == 0) {
-                return abort(404);
+                return abort(403);
             }
         } else {
             return redirect(route('login'));

@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('authors', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-			$table->foreignId('product_id')->constrained('products');
             $table->text('bio');
             $table->string('image');
             $table->timestamps();

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('order_id')->constrained('orders')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('product_id')->constrained('products')->onUpdate('cascade')->onDelete('cascade');
-            $table->longText('product');
+            $table->longText('product')->nullable();
             $table->integer('number')->default(1);
             $table->decimal('final_product_price',20, 3)->nullable();
             $table->decimal('final_total_price',20, 3)->nullable()->comment('number * final_product_price');
